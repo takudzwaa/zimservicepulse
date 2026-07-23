@@ -72,7 +72,35 @@ def district_summary(df: pd.DataFrame) -> pd.DataFrame:
         + 0.25 * _minmax(100 - out["on_time_pct"])
         + 0.25 * _minmax(5 - out["satisfaction"])
     ) * 100
+    out["urgent_share"] = (
+        out["urgent_backlog"] / out["unresolved_backlog"].replace(0, pd.NA) * 100
+    ).fillna(0.0)
+    # Highlight the worst urgent concentrations (top quartile in the current view),
+    # not every district that has any urgent case — otherwise the map lights up fully.
+    if out["urgent_backlog"].gt(0).any():
+        threshold = float(out["urgent_backlog"].quantile(0.75))
+        out["has_urgent"] = out["urgent_backlog"] >= max(threshold, 1)
+    else:
+        out["has_urgent"] = False
+    out["urgent_flag"] = out["has_urgent"].map({True: "Urgent", False: "—"})
     return out.sort_values("pressure_score", ascending=False).reset_index(drop=True)
+
+
+def month_trend(df: pd.DataFrame) -> pd.DataFrame:
+    """One row per month with weighted KPIs for sparkline / trend charts."""
+    rows = []
+    for month, g in df.groupby("month", observed=True, sort=True):
+        k = kpis(g)
+        rows.append(
+            {
+                "month": str(month),
+                "requests_received": k["total_requests"],
+                "unresolved_backlog": k["backlog"],
+                "satisfaction": k["satisfaction"],
+                "on_time_pct": k["on_time_pct"],
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def group_summary(df: pd.DataFrame, by: str) -> pd.DataFrame:

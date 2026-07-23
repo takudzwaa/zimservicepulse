@@ -42,7 +42,7 @@ To refresh the wheel cache while online: `pip download -r requirements.txt -d ve
 | `app.py` | Layout and the 4-step storytelling flow (Overview → Explore → Insights → Actions) |
 | `data_loader.py` | Cached CSV loading and validation |
 | `metrics.py` | Weighted KPIs and the district pressure score |
-| `insights.py` | Deterministic rules engine for insight cards and actions |
+| `insights.py` | Deterministic rules engine for insight cards and actions (+ PDF export) |
 | `BRIEF.md` | Refined project brief incl. data contract and metric definitions |
 | `ROADMAP.md` | Build roadmap and bootcamp plan |
 

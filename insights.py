@@ -25,6 +25,29 @@ class Insight:
     severity: str          # "high" | "medium"
     action_title: str
     action_body: str
+    kind: str = "general"  # backlog | channel | urgent | satisfaction | slow
+
+
+# What-if focus modes — reorder actions without inventing new ones.
+FOCUS_OPTIONS = {
+    "Balanced (default severity)": None,
+    "Clear urgent backlog first": "urgent",
+    "Cut category backlog first": "backlog",
+    "Improve digital channels first": "channel",
+    "Raise citizen satisfaction first": "satisfaction",
+    "Fix slowest processes first": "slow",
+}
+
+
+def prioritise(insights: list[Insight], focus: str | None) -> list[Insight]:
+    """Reorder insights for a what-if focus; severity still breaks ties."""
+    severity_rank = {"high": 0, "medium": 1}
+
+    def key(ins: Insight) -> tuple:
+        focus_boost = 0 if (focus and ins.kind == focus) else 1
+        return (focus_boost, severity_rank.get(ins.severity, 9))
+
+    return sorted(insights, key=key)
 
 
 def generate(df: pd.DataFrame) -> list[Insight]:
@@ -43,8 +66,7 @@ def generate(df: pd.DataFrame) -> list[Insight]:
         if result is not None:
             insights.append(result)
 
-    order = {"high": 0, "medium": 1}
-    return sorted(insights, key=lambda i: order[i.severity])
+    return prioritise(insights, focus=None)
 
 
 def _backlog_leader(df: pd.DataFrame) -> Insight | None:
@@ -80,6 +102,7 @@ def _backlog_leader(df: pd.DataFrame) -> Insight | None:
             f"({settlement.lower()} focus) to clear the "
             f"{top['unresolved_backlog']:,}-case backlog."
         ),
+        kind="backlog",
     )
 
 
@@ -111,6 +134,7 @@ def _channel_gap(df: pd.DataFrame) -> Insight | None:
             f"the {worst['primary_channel']} workflow, which lags by "
             f"{gap:.0f} points on on-time resolution."
         ),
+        kind="channel",
     )
 
 
@@ -139,6 +163,7 @@ def _urgent_concentration(df: pd.DataFrame) -> Insight | None:
             f"Put {', '.join(top.index)} on a daily escalation review until "
             f"their combined {int(top.sum()):,} urgent cases are cleared."
         ),
+        kind="urgent",
     )
 
 
@@ -167,6 +192,7 @@ def _satisfaction_floor(df: pd.DataFrame) -> Insight | None:
             f"Commission community feedback sessions in {', '.join(low['district'])} "
             "to identify the drivers of low satisfaction and set a recovery target."
         ),
+        kind="satisfaction",
     )
 
 
@@ -199,6 +225,7 @@ def _slow_resolution(df: pd.DataFrame) -> Insight | None:
             f"Audit the {category.lower()} resolution workflow in {district} to "
             f"close the {days - overall:.1f}-day gap against the average."
         ),
+        kind="slow",
     )
 
 
@@ -222,3 +249,119 @@ def to_markdown(insights: list[Insight], kpi: dict, context: str) -> str:
     for i, ins in enumerate(insights, 1):
         lines += [f"{i}. **{ins.action_title}** — {ins.action_body}"]
     return "\n".join(lines).replace("**", "")
+
+
+def _plain(text: str) -> str:
+    """Strip markdown and replace Unicode punctuation for core PDF fonts."""
+    return (
+        text.replace("**", "")
+        .replace("*", "")
+        .replace("—", "-")
+        .replace("–", "-")
+        .replace("×", "x")
+        .replace("·", "-")
+        .replace("…", "...")
+        .replace("\u2019", "'")
+        .replace("\u2018", "'")
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+    )
+
+
+def to_pdf(
+    insights: list[Insight],
+    kpi: dict,
+    context: str,
+    focus_label: str = "Balanced (default severity)",
+) -> bytes:
+    """Build a briefing PDF from the current KPIs, insights, and actions."""
+    from io import BytesIO
+
+    from fpdf import FPDF
+
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.set_margins(left=14, top=12, right=14)
+    pdf.add_page()
+
+    pdf.set_fill_color(31, 78, 121)  # #1F4E79
+    pdf.rect(0, 0, 210, 28, "F")
+    pdf.set_text_color(255, 255, 255)
+    pdf.set_font("Helvetica", "B", 15)
+    pdf.set_xy(14, 8)
+    pdf.cell(182, 8, "ZimServicePulse - Insight & Action Briefing")
+    pdf.set_font("Helvetica", "", 9)
+    pdf.set_xy(14, 16)
+    pdf.cell(182, 6, "See the pressure. Act with precision.")
+
+    pdf.set_text_color(40, 40, 40)
+    pdf.set_xy(14, 34)
+    pdf.set_font("Helvetica", "", 10)
+    pdf.multi_cell(182, 5, f"Scope: {_plain(context)}")
+    pdf.set_x(14)
+    pdf.multi_cell(182, 5, f"Action priority focus: {_plain(focus_label)}")
+    pdf.ln(3)
+
+    def section(title: str) -> None:
+        pdf.set_x(14)
+        pdf.set_font("Helvetica", "B", 12)
+        pdf.set_text_color(31, 78, 121)
+        pdf.cell(182, 7, title, new_x="LMARGIN", new_y="NEXT")
+        pdf.set_text_color(40, 40, 40)
+
+    section("Key figures")
+    pdf.set_font("Helvetica", "", 10)
+    for line in (
+        f"Total requests: {kpi['total_requests']:,}",
+        f"Unresolved backlog: {kpi['backlog']:,} ({kpi['backlog_pct']:.1f}%)",
+        f"Avg citizen satisfaction: {kpi['satisfaction']:.2f}/5",
+        f"Resolved on time: {kpi['on_time_pct']:.1f}%",
+    ):
+        pdf.set_x(14)
+        pdf.cell(182, 5, line, new_x="LMARGIN", new_y="NEXT")
+    pdf.ln(3)
+
+    section("Insights")
+    if not insights:
+        pdf.set_font("Helvetica", "I", 10)
+        pdf.set_x(14)
+        pdf.cell(182, 5, "No insights for the current selection.", new_x="LMARGIN", new_y="NEXT")
+    else:
+        for i, ins in enumerate(insights, 1):
+            pdf.set_x(14)
+            pdf.set_font("Helvetica", "B", 10)
+            pdf.multi_cell(182, 5, f"{i}. [{ins.severity.upper()}] {_plain(ins.title)}")
+            pdf.set_x(14)
+            pdf.set_font("Helvetica", "", 9)
+            pdf.multi_cell(182, 4.5, _plain(ins.body))
+            pdf.ln(1)
+
+    pdf.ln(2)
+    section("Recommended actions")
+    if not insights:
+        pdf.set_font("Helvetica", "I", 10)
+        pdf.set_x(14)
+        pdf.cell(182, 5, "No actions for the current selection.", new_x="LMARGIN", new_y="NEXT")
+    else:
+        for i, ins in enumerate(insights, 1):
+            priority = "HIGH" if ins.severity == "high" else "MEDIUM"
+            pdf.set_x(14)
+            pdf.set_font("Helvetica", "B", 10)
+            pdf.multi_cell(182, 5, f"{i}. [{priority}] {_plain(ins.action_title)}")
+            pdf.set_x(14)
+            pdf.set_font("Helvetica", "", 9)
+            pdf.multi_cell(182, 4.5, _plain(ins.action_body))
+            pdf.ln(1)
+
+    pdf.set_y(-18)
+    pdf.set_x(14)
+    pdf.set_font("Helvetica", "I", 8)
+    pdf.set_text_color(120, 120, 120)
+    pdf.cell(
+        182, 5,
+        "All figures computed from 01_public_service_requests.csv - nothing hardcoded.",
+    )
+
+    buffer = BytesIO()
+    pdf.output(buffer)
+    return buffer.getvalue()
