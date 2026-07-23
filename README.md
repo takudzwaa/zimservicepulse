@@ -19,6 +19,22 @@ streamlit run app.py
 
 Requires `data/01_public_service_requests.csv` (official AI4I dataset).
 
+## Deploy on Streamlit Community Cloud
+
+1. Open [share.streamlit.io](https://share.streamlit.io/) and sign in with GitHub.
+2. Click **Create app** → **Yup, I have an app**.
+3. Use these settings:
+   - **Repository:** `takudzwaa/zimservicepulse`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+4. Optional: set a custom subdomain (e.g. `zimservicepulse`) and Python **3.12**.
+5. Click **Deploy**.
+
+Direct link (pre-filled):  
+https://share.streamlit.io/deploy?repository=takudzwaa/zimservicepulse&branch=main&mainModule=app.py
+
+After the first deploy, every `git push` to `main` updates the live app.
+
 ## Demoing without internet
 
 The default map uses OpenStreetMap tiles. At a venue without Wi-Fi, switch on
