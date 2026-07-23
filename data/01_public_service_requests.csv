@@ -1,0 +1,721 @@
+month,province,district,settlement_type,latitude,longitude,service_category,primary_channel,requests_received,requests_resolved,avg_resolution_days,pct_resolved_on_time,unresolved_backlog,citizen_satisfaction_1_5,priority_flag
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Walk-in,322,245,5.1,80.4,77,4.0,Watch
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,Walk-in,468,300,5.7,75.3,168,3.2,Urgent
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,Walk-in,554,389,6.2,64.7,165,4.0,Watch
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,Web portal,398,349,2.1,79.0,49,4.4,Normal
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,Walk-in,316,247,1.8,92.8,69,3.7,Watch
+2026-01,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,Walk-in,368,323,8.5,66.0,45,3.5,Normal
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,Walk-in,255,193,6.0,76.9,62,3.1,Watch
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,Community officer,374,293,4.9,74.6,81,3.5,Watch
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,WhatsApp,406,315,5.2,81.0,91,2.9,Watch
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,WhatsApp,218,149,1.6,92.5,69,4.1,Urgent
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,WhatsApp,278,266,3.3,86.8,12,4.1,Normal
+2026-01,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,Web portal,203,130,2.5,92.1,73,3.5,Urgent
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,Call centre,472,424,7.1,74.4,48,3.5,Normal
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,WhatsApp,485,401,6.9,49.3,84,3.8,Normal
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,Walk-in,333,307,6.0,62.4,26,3.9,Normal
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,Web portal,357,330,1.2,92.7,27,4.0,Normal
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,Community officer,539,420,4.7,73.1,119,3.6,Watch
+2026-01,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,Call centre,386,265,4.8,73.6,121,3.4,Urgent
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,Call centre,248,151,6.9,59.8,97,3.0,Urgent
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,WhatsApp,511,421,4.0,91.8,90,3.4,Normal
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,Call centre,399,330,1,88.4,69,3.9,Normal
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,Web portal,435,318,5.2,71.3,117,3.3,Watch
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,Walk-in,569,464,5.7,77.5,105,3.3,Watch
+2026-01,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Community officer,337,193,7.2,65.9,144,2.8,Urgent
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,WhatsApp,272,242,3.9,73.2,30,4.1,Normal
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,WhatsApp,367,294,3.8,80.7,73,3.2,Watch
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,Web portal,306,247,3.0,95.1,59,3.7,Watch
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,Community officer,506,378,4.1,93.0,128,3.4,Watch
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Community officer,448,401,3.4,84.3,47,3.8,Normal
+2026-01,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,Web portal,456,393,5.9,70.7,63,4.1,Normal
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,Community officer,126,120,6.5,73.0,6,4.2,Normal
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,Call centre,69,55,5.2,79.2,14,3.7,Watch
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Web portal,220,197,2.0,91.7,23,4.1,Normal
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,Community officer,155,114,6.0,61.5,41,3.0,Watch
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Walk-in,216,183,7.6,60.3,33,3.4,Normal
+2026-01,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,Call centre,239,228,4.2,84.2,11,4.0,Normal
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,WhatsApp,238,167,6.4,67.2,71,3.4,Watch
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,Walk-in,334,231,2.2,88.2,103,3.3,Urgent
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Community officer,417,314,7.6,63.3,103,3.4,Watch
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,Walk-in,360,292,3.2,96.2,68,3.6,Watch
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,WhatsApp,485,465,4.8,72.6,20,4.0,Normal
+2026-01,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Walk-in,365,300,10.2,54.1,65,3.4,Normal
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,Call centre,116,88,5.3,71.1,28,3.2,Watch
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,WhatsApp,165,153,7.7,61.2,12,3.6,Normal
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,Community officer,223,166,6.8,62.8,57,3.4,Watch
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,Call centre,196,143,6.6,68.0,53,3.7,Watch
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,Web portal,150,139,3.6,82.0,11,3.8,Normal
+2026-01,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,WhatsApp,191,183,2.3,80.7,8,4.0,Normal
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,WhatsApp,438,339,3.2,85.9,99,3.8,Watch
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Web portal,327,289,6.6,69.2,38,3.4,Normal
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,Walk-in,489,457,8.0,56.3,32,3.6,Normal
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Call centre,515,402,4.7,84.2,113,3.0,Watch
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Walk-in,515,396,4.9,70.2,119,3.3,Watch
+2026-01,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Call centre,264,176,8.1,68.8,88,2.8,Urgent
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,Web portal,232,207,3.9,92.1,25,4.3,Normal
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,WhatsApp,125,120,2.2,97,5,4.3,Normal
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Web portal,267,256,2.1,83.8,11,4.1,Normal
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,Call centre,214,179,6.9,64.5,35,3.5,Normal
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Community officer,177,140,7.0,68.3,37,3.3,Watch
+2026-01,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,Web portal,133,103,5.2,51.5,30,3.2,Watch
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,Community officer,300,233,8.0,61.0,67,3.3,Watch
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Web portal,316,303,8.2,50.7,13,3.5,Normal
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Community officer,499,413,2.8,90.2,86,3.9,Normal
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,Walk-in,521,354,2.9,77.8,167,3.7,Urgent
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Call centre,439,328,1.3,89.3,111,3.6,Watch
+2026-01,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,Community officer,468,392,8.0,65.1,76,3.7,Normal
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,Web portal,192,180,6.4,72.3,12,3.8,Normal
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,Walk-in,115,95,6.1,64.9,20,3.8,Normal
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,WhatsApp,125,95,5.5,84.3,30,3.4,Watch
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,WhatsApp,113,95,4.9,75.6,18,3.7,Normal
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,Call centre,151,115,7.6,54.8,36,3.3,Watch
+2026-01,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,Web portal,157,138,5.2,66.9,19,3.6,Normal
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,Walk-in,350,236,6.1,77.9,114,3.5,Urgent
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,Community officer,496,476,4.5,81.9,20,4.2,Normal
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Web portal,403,275,4.3,79.8,128,3.0,Urgent
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,Community officer,487,385,2.2,97,102,4.0,Watch
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,Walk-in,329,258,4.2,76.5,71,3.3,Watch
+2026-01,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,Walk-in,301,232,3.3,86.0,69,3.3,Watch
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,Community officer,155,115,5.4,76.8,40,3.4,Watch
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Web portal,96,92,6.1,69.8,4,4.0,Normal
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,Walk-in,137,100,6.3,55.4,37,3.3,Watch
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Community officer,107,97,4.9,81.4,10,3.9,Normal
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Community officer,162,123,7.3,63.6,39,3.5,Watch
+2026-01,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,Call centre,205,157,6.1,77.4,48,3.8,Watch
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Walk-in,122,81,5.9,83.0,41,3.3,Urgent
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,Walk-in,271,153,5.7,73.8,118,3.6,Urgent
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,WhatsApp,139,126,4.2,82.6,13,3.7,Normal
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,WhatsApp,175,135,4.9,87.1,40,3.3,Watch
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,Web portal,199,131,4.8,70.3,68,3.5,Urgent
+2026-01,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Call centre,186,136,3.7,84.5,50,3.7,Watch
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,Web portal,88,76,2.3,73.2,12,3.8,Normal
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Community officer,236,165,6.3,63.6,71,3.1,Urgent
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Call centre,263,222,6.7,70.6,41,3.6,Normal
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Web portal,106,77,4.0,90.4,29,3.8,Watch
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,Walk-in,235,165,6.1,80.8,70,3.2,Watch
+2026-01,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,WhatsApp,198,175,4.6,75.1,23,3.8,Normal
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,Walk-in,484,312,8.2,58.0,172,2.9,Urgent
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,Web portal,285,208,4.3,66.4,77,3.5,Watch
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,Web portal,431,358,4.7,63.7,73,3.6,Normal
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,Call centre,371,335,7.2,62.5,36,3.6,Normal
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,Walk-in,453,335,9.1,60.9,118,3.1,Watch
+2026-01,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,WhatsApp,400,327,3.9,84.3,73,3.8,Watch
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,Call centre,318,274,5.9,60.5,44,3.0,Normal
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Community officer,236,167,6.0,61.1,69,3.5,Watch
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,WhatsApp,241,200,5.9,73.5,41,3.6,Normal
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,Community officer,342,271,8.3,58.3,71,3.1,Watch
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,Call centre,195,163,6.6,63.2,32,3.4,Normal
+2026-01,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,Web portal,169,147,5.7,68.7,22,3.8,Normal
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,Web portal,362,327,5.7,71.3,35,3.6,Normal
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Walk-in,391,368,6.8,65.5,23,3.3,Normal
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Community officer,458,369,2.6,86.5,89,4.1,Watch
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,Community officer,405,312,6.4,72.9,93,3.7,Watch
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Web portal,297,285,4.7,75.0,12,3.9,Normal
+2026-01,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,Community officer,420,371,9.5,56.7,49,3.1,Normal
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,WhatsApp,566,484,6.1,66.5,82,3.7,Normal
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,Call centre,414,337,4.7,92.4,77,3.3,Watch
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,Web portal,340,294,3.2,82.1,46,3.7,Normal
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Community officer,471,293,9.5,49.6,178,2.3,Urgent
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,WhatsApp,356,308,2.1,97,48,3.7,Normal
+2026-01,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,Call centre,386,353,2.8,74.0,33,3.9,Normal
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Walk-in,309,272,7.2,60.2,37,3.6,Normal
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,Call centre,556,379,5.7,78.2,177,3.0,Urgent
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,Walk-in,442,323,5.6,69.3,119,3.1,Watch
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,WhatsApp,444,367,7.1,81.3,77,3.4,Normal
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,WhatsApp,393,375,6.8,72.6,18,3.6,Normal
+2026-02,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,Walk-in,389,345,6.4,83.0,44,3.7,Normal
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,WhatsApp,173,128,5.6,76.4,45,3.6,Watch
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,Web portal,313,271,4.2,67.5,42,3.7,Normal
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,Call centre,169,130,5.2,76.9,39,3.5,Watch
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,Call centre,197,173,6.8,65.6,24,3.6,Normal
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,Web portal,339,269,4.5,91.9,70,3.9,Watch
+2026-02,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,WhatsApp,215,200,5.7,55.8,15,4.0,Normal
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,Community officer,481,439,7.3,60.5,42,3.3,Normal
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,Web portal,500,345,3.3,95.7,155,3.1,Urgent
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,WhatsApp,305,228,4.0,78.1,77,3.3,Watch
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,Community officer,399,303,7.2,55.8,96,3.6,Watch
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,WhatsApp,487,378,8.7,60.9,109,3.6,Watch
+2026-02,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,Call centre,317,245,7.9,55.6,72,2.9,Watch
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,WhatsApp,442,397,6.3,74.0,45,3.2,Normal
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,Walk-in,384,333,4.9,88.8,51,3.9,Normal
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,Community officer,468,399,2.9,75.5,69,3.7,Normal
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,Community officer,428,354,3.6,88.5,74,3.6,Normal
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,WhatsApp,336,256,3.9,74.7,80,3.3,Watch
+2026-02,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Community officer,561,484,3.1,78.6,77,4.0,Normal
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,WhatsApp,435,350,6.2,83.5,85,3.3,Watch
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,Call centre,464,371,5.8,68.5,93,3.5,Watch
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,Community officer,503,421,9.3,67.0,82,3.1,Normal
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,Call centre,594,511,2.8,81.9,83,3.9,Normal
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Call centre,393,377,3.8,72.8,16,4.5,Normal
+2026-02,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,Call centre,379,301,4.7,85.5,78,3.2,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,WhatsApp,132,94,3.4,80.6,38,3.4,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,Web portal,241,195,5.7,70.8,46,3.6,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Community officer,338,258,7.5,59.9,80,3.1,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,WhatsApp,126,96,2.4,87.6,30,3.5,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Web portal,160,126,2.7,89.7,34,4.1,Watch
+2026-02,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,Walk-in,35,27,3.5,89.1,8,3.4,Watch
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,WhatsApp,309,229,6.8,66.8,80,3.1,Watch
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,Call centre,223,173,7.0,67.2,50,3.3,Watch
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Community officer,469,450,6.9,67.9,19,3.9,Normal
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,Community officer,474,353,7.4,55.6,121,2.8,Watch
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,WhatsApp,311,286,2.9,77.0,25,3.7,Normal
+2026-02,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Call centre,555,407,3.6,70.4,148,4.0,Watch
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,Walk-in,103,81,6.4,74.5,22,3.4,Watch
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,Walk-in,203,140,6.1,61.4,63,3.0,Urgent
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,Call centre,205,138,6.5,70.8,67,3.0,Urgent
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,Call centre,112,77,2.9,94.6,35,3.6,Urgent
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,Call centre,181,149,4.1,76.9,32,3.5,Normal
+2026-02,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,Call centre,132,112,6.1,61.8,20,3.7,Normal
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,Web portal,453,432,7.5,58.9,21,3.6,Normal
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Community officer,303,210,5.3,78.5,93,3.3,Urgent
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,Web portal,492,450,4.6,83.9,42,3.7,Normal
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Web portal,539,492,5.7,70.4,47,3.6,Normal
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Walk-in,451,403,6.8,69.3,48,3.4,Normal
+2026-02,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Call centre,501,385,4.0,78.1,116,3.4,Watch
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,Walk-in,86,71,7.8,68.7,15,3.2,Normal
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,WhatsApp,192,160,6.0,70.8,32,3.3,Normal
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Call centre,188,158,4.8,66.6,30,3.8,Normal
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,Web portal,278,256,5.0,78.4,22,4.0,Normal
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Community officer,174,143,4.7,89.0,31,3.5,Normal
+2026-02,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,WhatsApp,260,194,4.2,87.1,66,3.4,Watch
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,WhatsApp,666,611,6.6,70.2,55,3.6,Normal
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Call centre,413,290,7.9,70.5,123,3.1,Watch
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Walk-in,515,361,3.7,75.7,154,3.3,Watch
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,Community officer,323,205,6.0,75.3,118,2.9,Urgent
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Community officer,396,311,5.6,69.5,85,3.4,Watch
+2026-02,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,WhatsApp,549,430,7.5,65.4,119,2.9,Watch
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,Walk-in,196,156,3.8,87.3,40,3.8,Watch
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,WhatsApp,212,194,8.8,46.5,18,3.3,Normal
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,WhatsApp,172,165,4.5,72.4,7,4.0,Normal
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,Walk-in,219,144,5.8,68.7,75,3.1,Urgent
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,Web portal,226,158,3.9,75.9,68,3.4,Urgent
+2026-02,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,Community officer,168,136,4.8,70.3,32,4.0,Watch
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,Call centre,459,250,6.5,64.7,209,3.1,Urgent
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,Walk-in,435,349,9.1,56.1,86,3.6,Watch
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Call centre,530,403,7.0,61.3,127,3.2,Watch
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,Walk-in,270,214,5.9,53.4,56,3.4,Watch
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,WhatsApp,273,224,5.7,64.5,49,3.5,Normal
+2026-02,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,Call centre,623,517,6.8,62.0,106,3.7,Normal
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,Call centre,156,112,6.0,69.0,44,3.4,Watch
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Call centre,74,57,3.6,75.7,17,3.4,Watch
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,WhatsApp,197,167,3.5,66.4,30,3.6,Normal
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Walk-in,99,76,4.1,87.1,23,3.8,Watch
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Community officer,295,235,5.2,61.1,60,3.3,Watch
+2026-02,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,Community officer,274,191,5.4,65.7,83,3.9,Urgent
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Web portal,360,267,6.3,67.4,93,3.0,Watch
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,Web portal,89,71,6.4,73.1,18,3.1,Watch
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,Community officer,335,247,4.6,85.5,88,3.2,Watch
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,WhatsApp,164,143,6.7,69.9,21,3.2,Normal
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,WhatsApp,241,184,3.8,84.6,57,3.6,Watch
+2026-02,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Walk-in,254,243,3.9,87.6,11,3.8,Normal
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,Walk-in,118,100,7.5,75.2,18,3.6,Normal
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Call centre,138,86,5.2,85.8,52,3.1,Urgent
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Community officer,321,246,6.9,55.6,75,2.9,Watch
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Walk-in,158,126,7.4,62.8,32,3.6,Watch
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,WhatsApp,299,261,4.6,77.8,38,3.8,Normal
+2026-02,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,Community officer,126,90,5.2,71.5,36,3.3,Watch
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,Community officer,516,460,7.9,59.9,56,3.5,Normal
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,WhatsApp,410,392,6.9,66.2,18,3.4,Normal
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,Web portal,385,289,5.7,65.9,96,3.2,Watch
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,Web portal,431,295,5.0,72.2,136,3.1,Urgent
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,WhatsApp,528,437,1.6,93.5,91,4.0,Normal
+2026-02,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,WhatsApp,459,379,7.6,69.6,80,3.2,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,Walk-in,209,172,6.1,73.8,37,3.5,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Walk-in,170,142,8.3,71.4,28,3.4,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,Walk-in,184,158,8.0,57.1,26,3.1,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,WhatsApp,256,241,3.0,97,15,4.3,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,Community officer,239,198,2.4,87.2,41,3.5,Normal
+2026-02,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,Community officer,279,223,6.6,68.5,56,3.7,Watch
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,WhatsApp,575,424,5.5,71.6,151,3.6,Watch
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Walk-in,530,397,7.2,58.4,133,3.3,Watch
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Community officer,410,379,5.4,59.8,31,4.4,Normal
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,Community officer,451,363,5.7,59.5,88,3.2,Watch
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Call centre,455,339,7.4,78.8,116,3.1,Watch
+2026-02,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,Call centre,466,413,1.2,86.6,53,4.1,Normal
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,Call centre,300,205,6.1,69.8,95,3.1,Urgent
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,Walk-in,490,369,6.5,64.3,121,3.6,Watch
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,Community officer,438,404,4.8,71.6,34,3.7,Normal
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Community officer,331,211,5.2,66.8,120,3.2,Urgent
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,WhatsApp,419,352,6.1,63.0,67,3.6,Normal
+2026-02,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,Community officer,362,322,4.9,71.1,40,3.7,Normal
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Call centre,678,460,10.0,54.8,218,2.7,Urgent
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,Web portal,400,315,3.2,74.0,85,3.4,Watch
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,WhatsApp,553,430,2.8,88.8,123,3.8,Watch
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,Walk-in,463,359,6.5,75.0,104,3.5,Watch
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,Walk-in,480,336,2.5,78.6,144,3.7,Watch
+2026-03,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,Walk-in,515,397,4.9,86.6,118,3.6,Watch
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,Walk-in,322,286,7.0,50.3,36,3.6,Normal
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,Call centre,303,245,6.9,63.9,58,3.5,Watch
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,Web portal,224,166,6.1,80.7,58,3.4,Watch
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,Community officer,224,182,5.2,78.5,42,3.6,Watch
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,Web portal,446,314,6.5,57.2,132,2.6,Watch
+2026-03,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,Call centre,292,229,3.9,86.5,63,3.3,Watch
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,WhatsApp,396,266,7.3,48.6,130,3.1,Urgent
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,Call centre,492,397,7.2,75.4,95,3.7,Watch
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,Web portal,494,398,4.7,80.3,96,3.8,Watch
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,Community officer,377,282,3.4,77.1,95,3.5,Watch
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,Call centre,546,466,3.8,86.6,80,3.3,Normal
+2026-03,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,Walk-in,322,245,9.7,45.8,77,2.8,Watch
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,WhatsApp,642,573,3.7,92.1,69,4.0,Normal
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,WhatsApp,414,386,5.8,53.0,28,4.1,Normal
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,Walk-in,498,430,4.8,72.4,68,3.9,Normal
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,Call centre,562,427,4.8,72.4,135,4.0,Watch
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,WhatsApp,367,242,4.3,67.3,125,3.2,Urgent
+2026-03,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Walk-in,357,302,5.7,62.0,55,3.5,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,WhatsApp,461,442,5.6,70.0,19,4.2,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,Community officer,444,372,5.9,71.1,72,3.6,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,Web portal,439,368,4.4,78.7,71,4.0,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,Web portal,385,345,1,81.3,40,3.9,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Web portal,398,362,6.3,55.8,36,3.4,Normal
+2026-03,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,Web portal,516,495,1.3,97,21,4.2,Normal
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,Walk-in,169,128,8.0,57.1,41,3.4,Watch
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,Community officer,260,245,4.0,86.9,15,3.8,Normal
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Walk-in,197,142,2.7,81.1,55,3.6,Watch
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,Call centre,372,290,9.3,46.1,82,3.2,Watch
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Web portal,196,162,3.4,79.1,34,3.8,Normal
+2026-03,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,Web portal,250,225,3.6,75.3,25,4.0,Normal
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,Web portal,504,437,5.3,73.5,67,3.5,Normal
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,WhatsApp,550,472,3.2,72.8,78,3.8,Normal
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Web portal,351,310,3.4,88.2,41,3.5,Normal
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,Walk-in,413,366,9.0,56.2,47,3.4,Normal
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,Community officer,465,343,5.4,79.3,122,2.9,Watch
+2026-03,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Walk-in,683,491,6.3,57.4,192,2.5,Watch
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,Call centre,214,175,8.7,59.1,39,3.1,Watch
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,Web portal,96,82,4.6,80.3,14,3.7,Normal
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,Call centre,312,170,4.6,82.1,142,2.7,Urgent
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,Community officer,362,318,6.5,71.9,44,3.3,Normal
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,WhatsApp,279,243,5.7,80.7,36,3.7,Normal
+2026-03,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,WhatsApp,146,129,3.2,81.5,17,3.8,Normal
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,Web portal,654,627,5.1,81.9,27,4.1,Normal
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Community officer,410,316,6.0,77.9,94,3.1,Watch
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,Walk-in,606,400,6.0,78.5,206,3.2,Urgent
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Web portal,633,607,4.9,68.2,26,4.0,Normal
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Community officer,563,436,5.2,55.7,127,3.7,Watch
+2026-03,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Web portal,577,487,6.2,76.6,90,3.4,Normal
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,WhatsApp,152,118,4.7,68.6,34,3.4,Watch
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,Community officer,109,93,7.4,55.7,16,3.6,Normal
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Community officer,214,166,3.7,76.0,48,3.4,Watch
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,Web portal,189,134,4.4,83.9,55,3.4,Watch
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Call centre,370,316,7.0,63.0,54,3.4,Normal
+2026-03,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,Community officer,269,251,4.4,76.9,18,3.9,Normal
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,Call centre,457,320,3.2,78.6,137,3.2,Watch
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Call centre,370,263,9.0,52.2,107,2.9,Watch
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Web portal,471,373,2.3,80.6,98,3.4,Watch
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,Call centre,348,220,2.5,90.6,128,2.9,Urgent
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Walk-in,508,371,5.8,56.8,137,3.8,Watch
+2026-03,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,WhatsApp,581,505,3.1,86.2,76,4.2,Normal
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,WhatsApp,198,152,7.1,68.8,46,3.5,Watch
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,Call centre,195,156,4.9,81.1,39,3.1,Watch
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,Call centre,220,187,4.9,87.4,33,3.9,Normal
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,Community officer,279,221,7.4,70.8,58,3.3,Watch
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,Web portal,147,123,5.1,69.3,24,3.3,Normal
+2026-03,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,Call centre,262,215,4.2,64.0,47,3.6,Normal
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,WhatsApp,764,609,4.4,77.6,155,3.2,Watch
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,WhatsApp,339,285,5.5,68.6,54,3.9,Normal
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Community officer,307,219,6.6,63.3,88,3.2,Watch
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,Community officer,557,479,3.0,75.0,78,3.4,Normal
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,Call centre,393,298,5.7,61.9,95,3.3,Watch
+2026-03,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,Call centre,413,362,3.7,78.7,51,3.6,Normal
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,Community officer,209,179,7.5,46.9,30,3.6,Normal
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Walk-in,103,89,7.4,71.0,14,3.6,Normal
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,Call centre,268,209,7.3,58.9,59,3.3,Watch
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Web portal,227,211,3.1,88.2,16,4.1,Normal
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Walk-in,191,176,5.2,72.2,15,3.9,Normal
+2026-03,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,Walk-in,249,196,5.4,76.8,53,3.9,Watch
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Community officer,202,166,4.7,80.1,36,4.0,Normal
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,Community officer,232,195,8.3,53.5,37,3.3,Normal
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,Walk-in,216,152,3.4,86.2,64,3.4,Watch
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,Community officer,182,151,1.9,81.9,31,4.0,Normal
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,Community officer,141,116,5.2,72.6,25,3.5,Normal
+2026-03,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Web portal,156,130,2.6,86.9,26,4.2,Normal
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,Community officer,106,74,7.1,57.3,32,3.3,Urgent
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Call centre,275,217,8.4,48.5,58,3.4,Watch
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Call centre,88,66,8.2,45.6,22,3.0,Watch
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Community officer,381,303,3.9,87.3,78,3.8,Watch
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,WhatsApp,111,72,1,83.9,39,3.9,Urgent
+2026-03,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,WhatsApp,107,102,5.2,77.8,5,3.8,Normal
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,WhatsApp,351,258,5.6,79.3,93,3.1,Watch
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,Walk-in,600,381,6.2,64.0,219,3.4,Urgent
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,Web portal,435,378,1.5,96.4,57,3.8,Normal
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,Call centre,302,244,6.2,63.3,58,3.8,Watch
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,Call centre,487,456,7.1,70.4,31,3.8,Normal
+2026-03,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,Web portal,375,288,6.3,62.7,87,3.7,Watch
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,WhatsApp,187,153,1.9,93.4,34,3.5,Watch
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Call centre,221,187,6.0,64.6,34,3.5,Normal
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,WhatsApp,525,475,3.4,83.7,50,3.8,Normal
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,Community officer,452,412,6.0,73.0,40,3.7,Normal
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,Call centre,332,271,2.8,71.9,61,3.6,Watch
+2026-03,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,WhatsApp,377,297,5.7,64.7,80,3.7,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,Walk-in,610,432,9.7,52.9,178,2.7,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Walk-in,261,209,7.6,60.1,52,3.3,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Walk-in,358,275,6.4,63.3,83,3.9,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,Walk-in,663,480,4.1,77.1,183,3.6,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Call centre,339,273,5.2,80.1,66,3.6,Watch
+2026-03,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,Community officer,470,369,5.6,63.5,101,3.2,Watch
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,Community officer,555,504,1.4,81.6,51,3.9,Normal
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,Web portal,274,194,7.9,57.1,80,3.3,Watch
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,Web portal,613,525,3.1,79.1,88,3.8,Normal
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Walk-in,502,415,5.3,62.8,87,3.5,Normal
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,Web portal,520,499,6.5,63.3,21,3.8,Normal
+2026-03,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,Community officer,353,294,4.1,72.3,59,4.1,Normal
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Call centre,724,547,6.6,65.3,177,3.3,Watch
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,WhatsApp,671,633,8.8,56.0,38,4.0,Normal
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,WhatsApp,598,573,4.9,67.5,25,4.1,Normal
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,Community officer,593,466,6.3,75.2,127,3.2,Watch
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,WhatsApp,353,188,2.4,97,165,2.9,Urgent
+2026-04,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,Call centre,458,298,4.2,91.3,160,3.5,Urgent
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,Call centre,232,175,9.7,60.5,57,3.0,Watch
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,Call centre,404,336,7.5,63.5,68,3.0,Normal
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,WhatsApp,395,289,5.3,62.0,106,3.4,Watch
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,Walk-in,444,361,4.8,68.0,83,3.6,Watch
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,Web portal,185,131,5.5,78.5,54,3.3,Watch
+2026-04,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,Web portal,300,228,4.4,82.5,72,3.4,Watch
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,Web portal,293,254,4.9,69.8,39,4.1,Normal
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,Walk-in,282,230,6.7,67.0,52,3.7,Watch
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,Call centre,484,422,5.4,67.4,62,3.7,Normal
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,WhatsApp,508,377,1.5,81.9,131,3.5,Watch
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,Web portal,479,388,6.8,75.8,91,3.5,Watch
+2026-04,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,Walk-in,585,499,3.5,85.4,86,3.9,Normal
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,Walk-in,627,456,6.9,61.3,171,3.1,Watch
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,Call centre,433,319,7.0,59.2,114,3.3,Watch
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,Call centre,357,272,7.1,59.1,85,3.2,Watch
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,Walk-in,343,234,6.8,68.1,109,3.6,Urgent
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,Call centre,432,311,5.4,74.8,121,3.6,Watch
+2026-04,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Call centre,736,628,5.9,74.2,108,3.7,Normal
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,WhatsApp,369,302,5.7,67.0,67,3.5,Watch
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,Call centre,445,376,4.5,61.7,69,3.4,Normal
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,Walk-in,497,393,5.6,69.5,104,3.2,Watch
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,Web portal,374,343,8.3,55.8,31,3.8,Normal
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Community officer,328,274,5.9,72.4,54,4.0,Normal
+2026-04,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,Web portal,499,467,3.3,82.9,32,3.7,Normal
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,Web portal,174,159,5.6,66.3,15,3.5,Normal
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,Walk-in,350,283,7.0,56.1,67,2.8,Watch
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Call centre,209,135,4.3,77.1,74,3.1,Urgent
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,Community officer,153,110,6.0,63.8,43,3.7,Watch
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Web portal,338,323,4.9,73.9,15,4.2,Normal
+2026-04,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,Walk-in,309,257,3.9,84.7,52,3.9,Normal
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,Community officer,511,380,7.4,66.9,131,3.6,Watch
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,Web portal,390,352,2.5,93.6,38,4.2,Normal
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Call centre,559,351,3.3,80.5,208,3.2,Urgent
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,WhatsApp,512,487,1.7,94.2,25,4.9,Normal
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,Walk-in,505,415,7.9,57.9,90,3.6,Normal
+2026-04,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Web portal,547,482,2.6,95.4,65,4.0,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,Community officer,323,309,7.3,64.6,14,3.9,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,Web portal,282,246,4.3,81.2,36,4.2,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,WhatsApp,206,177,4.2,76.6,29,3.7,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,WhatsApp,292,259,3.3,89.7,33,4.2,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,Web portal,273,227,5.0,67.6,46,3.6,Normal
+2026-04,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,Call centre,120,90,7.6,71.3,30,3.4,Watch
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,WhatsApp,496,458,3.2,68.6,38,4.2,Normal
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Call centre,492,359,9.4,63.2,133,3.2,Watch
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,Call centre,592,488,2.4,87.6,104,3.9,Normal
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Web portal,295,262,4.4,84.0,33,4.1,Normal
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Community officer,354,313,8.8,41.4,41,3.6,Normal
+2026-04,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Web portal,387,371,4.6,82.4,16,3.6,Normal
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,WhatsApp,254,191,6.1,65.7,63,3.6,Watch
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,Walk-in,362,208,8.8,55.6,154,2.8,Urgent
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Call centre,264,190,3.8,82.6,74,3.4,Watch
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,Call centre,194,158,1.8,85.1,36,4.0,Watch
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Community officer,279,201,2.2,82.3,78,3.5,Watch
+2026-04,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,Web portal,201,159,3.9,77.4,42,3.6,Watch
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,Walk-in,511,360,6.6,54.9,151,3.0,Watch
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Community officer,524,435,11.1,46.9,89,3.4,Normal
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Web portal,627,599,3.0,84.6,28,4.3,Normal
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,WhatsApp,346,320,5.1,65.6,26,3.8,Normal
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Walk-in,445,269,7.5,50.6,176,2.8,Urgent
+2026-04,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,Community officer,452,361,2.4,81.3,91,3.7,Watch
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,Web portal,296,250,4.9,75.9,46,3.7,Normal
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,WhatsApp,160,140,5.2,72.5,20,3.8,Normal
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,WhatsApp,124,113,5.5,87.7,11,3.7,Normal
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,Call centre,301,206,2.1,84.3,95,3.3,Urgent
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,WhatsApp,232,222,3.4,83.6,10,3.6,Normal
+2026-04,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,WhatsApp,151,109,3.8,68.5,42,3.9,Watch
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,Walk-in,536,422,8.8,52.0,114,3.3,Watch
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,Community officer,504,392,6.8,62.5,112,3.5,Watch
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Community officer,365,255,3.1,75.0,110,3.3,Urgent
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,WhatsApp,567,468,4.2,74.6,99,4.1,Normal
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,Walk-in,332,256,5.0,84.6,76,3.0,Watch
+2026-04,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,WhatsApp,630,520,2.9,85.4,110,3.8,Normal
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,WhatsApp,302,256,4.2,95.2,46,3.7,Normal
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Walk-in,243,170,10.0,57.1,73,2.7,Urgent
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,Call centre,167,135,7.2,66.5,32,3.5,Watch
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Community officer,268,191,3.1,88.5,77,4.3,Watch
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Web portal,223,150,9.1,44.5,73,3.3,Urgent
+2026-04,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,Community officer,388,308,5.1,82.6,80,3.4,Watch
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Web portal,194,165,3.6,90.9,29,3.8,Normal
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,Community officer,256,202,4.9,79.6,54,3.6,Watch
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,Walk-in,288,235,4.3,71.7,53,3.9,Watch
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,Community officer,198,152,6.1,58.1,46,3.5,Watch
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,Walk-in,245,185,6.8,63.5,60,3.4,Watch
+2026-04,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Call centre,172,129,7.5,52.7,43,3.4,Watch
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,WhatsApp,176,166,4.3,67.7,10,3.9,Normal
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Call centre,245,204,6.4,57.6,41,3.4,Normal
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Community officer,249,239,7.4,61.1,10,3.4,Normal
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Web portal,402,317,3.0,97,85,4.2,Watch
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,Call centre,124,114,4.3,89.9,10,4.1,Normal
+2026-04,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,Call centre,255,222,6.2,64.2,33,3.4,Normal
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,WhatsApp,496,448,5.5,73.2,48,3.9,Normal
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,Web portal,640,586,3.0,88.5,54,4.0,Normal
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,Call centre,442,383,1.7,87.0,59,4.0,Normal
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,Walk-in,456,324,6.9,63.2,132,2.8,Watch
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,Community officer,427,351,5.9,75.4,76,3.6,Normal
+2026-04,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,Call centre,591,383,5.3,73.2,208,3.4,Urgent
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,Call centre,296,260,5.4,81.6,36,3.5,Normal
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Call centre,272,259,5.2,87.7,13,3.6,Normal
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,Web portal,368,295,1.6,97,73,3.8,Watch
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,Call centre,404,327,7.6,57.0,77,3.7,Watch
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,WhatsApp,238,190,5.7,67.1,48,3.9,Watch
+2026-04,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,Community officer,315,249,5.5,72.8,66,3.3,Watch
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,Web portal,411,361,5.2,70.3,50,3.4,Normal
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Web portal,614,549,7.7,65.4,65,4.0,Normal
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Community officer,321,247,4.0,78.5,74,3.4,Watch
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,WhatsApp,707,637,2.2,97,70,3.7,Normal
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Community officer,407,351,4.8,65.3,56,4.1,Normal
+2026-04,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,WhatsApp,393,300,3.4,84.7,93,3.5,Watch
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,Community officer,520,480,6.8,67.4,40,3.4,Normal
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,WhatsApp,527,503,6.9,65.0,24,3.6,Normal
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,Call centre,411,323,5.6,78.4,88,3.5,Watch
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Call centre,481,437,5.6,69.6,44,3.9,Normal
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,Walk-in,488,370,6.3,88.9,118,3.1,Watch
+2026-04,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,WhatsApp,629,491,3.7,94.0,138,3.8,Watch
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Walk-in,535,458,6.0,66.2,77,3.8,Normal
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,Community officer,712,506,6.2,64.8,206,3.9,Watch
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,Community officer,469,369,6.9,51.9,100,3.1,Watch
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,Web portal,695,511,6.1,68.9,184,3.5,Watch
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,Web portal,307,207,5.8,67.6,100,2.8,Urgent
+2026-05,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,Call centre,536,514,4.7,65.2,22,3.7,Normal
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,Community officer,298,221,6.2,77.3,77,3.5,Watch
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,Community officer,316,247,5.6,81.1,69,3.4,Watch
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,Walk-in,348,272,7.4,51.6,76,3.4,Watch
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,WhatsApp,344,330,6.2,78.8,14,3.7,Normal
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,Walk-in,251,161,6.2,75.1,90,3.5,Urgent
+2026-05,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,Walk-in,375,283,6.5,69.4,92,3.6,Watch
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,Web portal,430,304,4.1,75.9,126,3.0,Watch
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,WhatsApp,553,456,6.1,58.3,97,3.7,Normal
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,Web portal,437,388,1.7,84.8,49,3.9,Normal
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,Walk-in,578,442,4.5,64.6,136,3.3,Watch
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,Call centre,605,491,2.1,82.7,114,3.7,Watch
+2026-05,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,Community officer,535,433,7.8,58.4,102,2.9,Watch
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,WhatsApp,457,390,7.7,60.7,67,3.4,Normal
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,Walk-in,576,478,5.1,80.2,98,3.4,Normal
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,Community officer,353,253,7.0,80.4,100,3.0,Watch
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,WhatsApp,410,388,5.9,72.5,22,4.0,Normal
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,Walk-in,445,312,4.1,73.1,133,3.7,Watch
+2026-05,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Walk-in,664,457,4.1,81.0,207,3.5,Urgent
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,Walk-in,480,313,10.2,47.3,167,2.6,Urgent
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,Walk-in,529,408,7.2,72.3,121,3.0,Watch
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,WhatsApp,487,330,3.0,83.5,157,3.2,Urgent
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,WhatsApp,443,374,3.7,75.8,69,3.6,Normal
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Community officer,409,377,1.6,92.2,32,4.1,Normal
+2026-05,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,WhatsApp,418,401,2.9,95.2,17,4.3,Normal
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,Call centre,149,131,1.8,86.5,18,3.8,Normal
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,WhatsApp,124,95,7.5,58.6,29,3.9,Watch
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Community officer,220,155,2.8,89.6,65,3.8,Watch
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,Call centre,328,272,7.6,50.7,56,3.8,Normal
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Community officer,347,250,6.2,72.4,97,3.4,Watch
+2026-05,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,Web portal,182,150,3.0,89.3,32,4.5,Normal
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,Web portal,597,481,5.6,75.2,116,3.2,Watch
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,Web portal,498,449,6.7,60.1,49,3.9,Normal
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Web portal,534,483,5.2,65.9,51,3.7,Normal
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,WhatsApp,617,479,4.0,75.0,138,3.1,Watch
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,Walk-in,404,305,7.4,63.7,99,3.2,Watch
+2026-05,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Web portal,358,282,5.7,77.8,76,3.2,Watch
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,WhatsApp,230,168,4.2,80.4,62,3.7,Watch
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,Call centre,260,222,7.3,70.7,38,3.3,Normal
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,Community officer,198,133,7.2,70.0,65,2.7,Urgent
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,Web portal,221,212,6.4,65.1,9,3.5,Normal
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,Web portal,215,175,2.4,81.4,40,4.0,Watch
+2026-05,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,Call centre,231,158,4.6,70.1,73,3.2,Urgent
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,WhatsApp,397,260,6.6,71.6,137,2.5,Urgent
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Community officer,365,350,10.7,39.1,15,3.3,Normal
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,WhatsApp,632,547,4.0,88.2,85,3.8,Normal
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Web portal,493,423,5.3,73.9,70,4.1,Normal
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Walk-in,450,397,6.5,69.7,53,3.7,Normal
+2026-05,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Call centre,429,290,6.3,58.9,139,3.4,Urgent
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,Community officer,244,178,1.6,97,66,3.9,Watch
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,WhatsApp,311,259,8.1,57.1,52,3.8,Normal
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Walk-in,190,164,7.4,71.2,26,3.5,Normal
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,WhatsApp,194,163,1.6,97,31,3.5,Normal
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Web portal,139,126,5.2,79.1,13,3.9,Normal
+2026-05,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,Call centre,363,287,2.8,85.8,76,3.7,Watch
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,WhatsApp,429,394,8.9,52.3,35,3.3,Normal
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Walk-in,595,434,6.1,62.7,161,3.1,Watch
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Call centre,346,283,2.2,78.8,63,3.8,Watch
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,Call centre,518,347,10.4,57.4,171,3.0,Urgent
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Walk-in,365,283,5.6,70.2,82,3.0,Watch
+2026-05,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,WhatsApp,446,339,3.1,97,107,3.2,Watch
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,Walk-in,275,246,5.9,83.8,29,3.7,Normal
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,WhatsApp,124,108,5.4,82.9,16,3.7,Normal
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,Web portal,238,166,7.2,69.8,72,3.0,Urgent
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,Community officer,145,105,1.3,97,40,3.8,Watch
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,Walk-in,262,205,7.1,73.8,57,3.1,Watch
+2026-05,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,Web portal,302,225,3.5,90.0,77,3.0,Watch
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,WhatsApp,428,410,4.4,83.5,18,3.8,Normal
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,WhatsApp,373,358,7.7,54.0,15,3.4,Normal
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Web portal,757,636,5.0,80.5,121,3.7,Normal
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,Community officer,415,341,4.4,79.3,74,3.2,Normal
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,Call centre,592,454,4.9,79.5,138,3.8,Watch
+2026-05,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,Call centre,541,436,6.9,66.7,105,3.2,Watch
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,Web portal,188,180,6.0,74.6,8,3.8,Normal
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Walk-in,218,161,6.2,59.3,57,3.1,Watch
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,WhatsApp,132,115,5.4,77.5,17,3.6,Normal
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Call centre,326,171,5.3,77.8,155,2.6,Urgent
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Web portal,212,186,2.1,87.7,26,4.0,Normal
+2026-05,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,WhatsApp,281,197,5.0,69.4,84,3.9,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Community officer,128,104,6.3,71.9,24,3.6,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,WhatsApp,451,360,4.5,70.2,91,2.9,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,Web portal,87,70,5.6,84.4,17,3.6,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,Web portal,231,176,4.6,83.0,55,3.8,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,Call centre,262,198,5.3,69.1,64,3.7,Watch
+2026-05,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Walk-in,211,192,5.6,63.1,19,3.8,Normal
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,Walk-in,158,122,6.1,70.9,36,3.8,Watch
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Web portal,288,230,5.1,61.4,58,3.5,Watch
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Web portal,54,45,3.4,78.9,9,4.2,Normal
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Community officer,424,293,5.1,80.2,131,3.9,Urgent
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,Community officer,236,125,4.9,89.7,111,3.0,Urgent
+2026-05,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,Call centre,118,91,3.6,63.9,27,3.7,Watch
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,Web portal,633,607,7.0,63.0,26,3.9,Normal
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,Walk-in,596,447,7.6,69.7,149,3.2,Watch
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,WhatsApp,800,609,3.9,81.6,191,3.4,Watch
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,WhatsApp,780,640,7.3,62.8,140,4.0,Normal
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,Walk-in,504,425,7.1,61.7,79,3.3,Normal
+2026-05,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,Call centre,386,317,7.7,65.6,69,3.7,Normal
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,WhatsApp,440,422,5.2,73.8,18,3.6,Normal
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Walk-in,284,228,8.1,44.8,56,3.0,Watch
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,Community officer,333,221,7.4,68.1,112,2.7,Urgent
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,Web portal,209,173,6.0,66.6,36,3.9,Normal
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,Web portal,505,463,4.0,87.3,42,3.6,Normal
+2026-05,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,WhatsApp,260,206,4.4,76.3,54,3.5,Watch
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,WhatsApp,697,610,8.0,65.0,87,3.4,Normal
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Web portal,822,789,4.2,90.3,33,4.2,Normal
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Community officer,393,324,7.3,62.8,69,3.2,Normal
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,Walk-in,589,514,6.2,65.7,75,3.7,Normal
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Community officer,568,465,3.4,81.5,103,3.8,Watch
+2026-05,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,Community officer,464,295,5.0,77.8,169,2.7,Urgent
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,Web portal,727,543,1.0,97,184,3.7,Watch
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,Call centre,712,524,8.3,71.6,188,3.5,Watch
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,Web portal,591,541,7.0,65.8,50,3.4,Normal
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Community officer,590,510,5.3,82.5,80,3.7,Normal
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,WhatsApp,404,343,7.1,54.7,61,3.6,Normal
+2026-05,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,Walk-in,503,355,7.4,76.3,148,3.3,Watch
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Water & sanitation,Web portal,408,343,9.3,60.4,65,3.7,Normal
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Roads & transport,Community officer,695,462,4.9,77.7,233,3.1,Urgent
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Business licensing,Web portal,578,435,3.7,69.7,143,3.5,Watch
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Waste management,Web portal,541,519,1.4,97,22,4.2,Normal
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Social protection,Walk-in,534,409,6.5,60.8,125,3.0,Watch
+2026-06,Harare,Harare Urban,Urban,-17.8292,31.0522,Citizen documentation,WhatsApp,506,318,6.0,67.3,188,3.1,Urgent
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Water & sanitation,Walk-in,407,308,6.6,64.2,99,3.2,Watch
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Roads & transport,WhatsApp,424,268,5.8,69.7,156,3.1,Urgent
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Business licensing,WhatsApp,208,173,5.1,82.5,35,3.9,Normal
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Waste management,Walk-in,360,250,4.4,72.2,110,3.8,Urgent
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Social protection,Call centre,614,474,4.6,86.7,140,3.8,Watch
+2026-06,Harare,Chitungwiza,Peri-urban,-18.0127,31.0756,Citizen documentation,WhatsApp,314,277,5.2,70.3,37,3.6,Normal
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Water & sanitation,Call centre,418,311,2.0,97,107,3.5,Watch
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Roads & transport,Web portal,751,625,2.8,90.3,126,3.9,Normal
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Business licensing,Call centre,408,362,7.6,61.4,46,3.5,Normal
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Waste management,Community officer,682,397,6.0,77.3,285,3.1,Urgent
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Social protection,Community officer,480,370,6.1,70.2,110,3.1,Watch
+2026-06,Bulawayo,Bulawayo Central,Urban,-20.1325,28.6265,Citizen documentation,WhatsApp,614,466,4.4,90.7,148,3.3,Watch
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Water & sanitation,Walk-in,518,325,6.0,76.4,193,2.8,Urgent
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Roads & transport,Call centre,384,300,8.1,59.5,84,3.0,Watch
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Business licensing,WhatsApp,561,453,4.1,68.6,108,3.7,Watch
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Waste management,WhatsApp,485,461,6.7,62.5,24,3.6,Normal
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Social protection,Walk-in,484,365,6.7,75.4,119,3.1,Watch
+2026-06,Bulawayo,Bulawayo North,Urban,-20.08,28.59,Citizen documentation,Community officer,548,472,4.1,89.8,76,3.7,Normal
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Water & sanitation,Walk-in,645,421,6.4,64.9,224,3.2,Urgent
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Roads & transport,Community officer,398,285,7.2,72.5,113,2.8,Watch
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Business licensing,WhatsApp,363,263,4.5,74.9,100,3.5,Watch
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Waste management,WhatsApp,422,244,4.0,86.0,178,3.2,Urgent
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Social protection,Call centre,607,438,5.3,77.0,169,3.7,Watch
+2026-06,Manicaland,Mutare,Urban,-18.9707,32.6709,Citizen documentation,Call centre,456,384,4.5,88.4,72,3.7,Normal
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Water & sanitation,Community officer,230,195,4.9,77.3,35,4.0,Normal
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Roads & transport,Call centre,298,258,6.8,70.6,40,3.3,Normal
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Business licensing,Web portal,381,302,5.2,75.4,79,3.4,Watch
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Waste management,WhatsApp,103,83,5.4,63.6,20,4.0,Watch
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Social protection,Community officer,267,224,1.8,97,43,3.8,Normal
+2026-06,Manicaland,Chipinge,Rural,-20.1883,32.6236,Citizen documentation,WhatsApp,166,159,5.7,75.8,7,3.4,Normal
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Water & sanitation,WhatsApp,532,442,4.5,78.4,90,4.0,Normal
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Roads & transport,Web portal,642,532,6.0,79.2,110,3.4,Normal
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Business licensing,Call centre,554,454,5.7,79.2,100,3.7,Watch
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Waste management,Walk-in,585,464,9.1,58.7,121,3.2,Watch
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Social protection,Community officer,481,333,6.2,64.8,148,2.4,Urgent
+2026-06,Mashonaland Central,Bindura,Urban,-17.3019,31.3306,Citizen documentation,Walk-in,426,394,8.4,43.0,32,3.5,Normal
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Water & sanitation,Call centre,259,167,7.8,62.3,92,3.0,Urgent
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Roads & transport,WhatsApp,329,304,6.0,64.3,25,3.3,Normal
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Business licensing,Web portal,234,176,4.6,80.1,58,3.8,Watch
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Waste management,Web portal,255,209,5.9,73.6,46,3.6,Watch
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Social protection,Community officer,420,342,3.3,77.4,78,3.8,Watch
+2026-06,Mashonaland Central,Mazowe,Rural,-17.5157,30.9739,Citizen documentation,WhatsApp,366,351,2.4,96.7,15,4.1,Normal
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Water & sanitation,Web portal,515,352,5.8,54.4,163,3.2,Urgent
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Roads & transport,Community officer,378,330,6.2,68.9,48,3.5,Normal
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Business licensing,Call centre,595,462,4.6,74.8,133,3.5,Watch
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Waste management,Web portal,387,358,6.8,66.2,29,3.5,Normal
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Social protection,Community officer,525,422,6.2,66.4,103,3.3,Watch
+2026-06,Mashonaland East,Marondera,Urban,-18.1853,31.5519,Citizen documentation,Web portal,389,343,4.2,77.1,46,3.8,Normal
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Water & sanitation,Call centre,197,132,7.4,53.2,65,2.8,Urgent
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Roads & transport,Community officer,297,215,7.8,64.0,82,3.3,Watch
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Business licensing,Web portal,183,173,3.8,81.7,10,4.6,Normal
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Waste management,WhatsApp,342,300,6.1,68.0,42,3.9,Normal
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Social protection,Walk-in,252,157,2.7,85.1,95,3.2,Urgent
+2026-06,Mashonaland East,Murehwa,Rural,-17.64,31.78,Citizen documentation,Walk-in,332,267,5.5,82.3,65,3.6,Watch
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Water & sanitation,Web portal,745,573,4.2,80.6,172,3.6,Watch
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Roads & transport,Call centre,548,419,7.1,62.9,129,3.6,Watch
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Business licensing,Walk-in,460,381,7.3,63.4,79,3.3,Normal
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Waste management,Walk-in,574,454,3.3,73.1,120,3.7,Watch
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Social protection,Call centre,454,378,6.2,71.4,76,3.6,Normal
+2026-06,Mashonaland West,Chinhoyi,Urban,-17.3667,30.2,Citizen documentation,Call centre,823,608,6.2,62.0,215,3.0,Watch
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Water & sanitation,WhatsApp,301,219,4.3,69.4,82,3.8,Watch
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Roads & transport,Walk-in,254,207,6.3,77.4,47,3.3,Watch
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Business licensing,WhatsApp,90,74,4.3,76.8,16,3.5,Normal
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Waste management,Community officer,192,160,2.2,94.7,32,3.6,Normal
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Social protection,Call centre,149,123,5.4,58.7,26,3.4,Normal
+2026-06,Mashonaland West,Hurungwe,Rural,-16.8438,29.6186,Citizen documentation,Community officer,385,285,5.4,60.7,100,3.4,Watch
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Water & sanitation,Community officer,717,593,5.4,68.7,124,3.5,Normal
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Roads & transport,Community officer,401,245,5.4,71.6,156,2.9,Urgent
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Business licensing,Web portal,574,469,6.4,70.7,105,3.6,Watch
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Waste management,Web portal,404,312,4.8,75.5,92,3.7,Watch
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Social protection,WhatsApp,591,544,4.6,71.8,47,3.5,Normal
+2026-06,Masvingo,Masvingo,Urban,-20.0744,30.8328,Citizen documentation,Community officer,645,528,4.9,84.8,117,3.9,Watch
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Water & sanitation,WhatsApp,318,276,4.8,78.2,42,3.6,Normal
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Roads & transport,Call centre,354,323,6.1,78.2,31,3.5,Normal
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Business licensing,Walk-in,268,191,4.5,78.8,77,3.2,Watch
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Waste management,Community officer,132,91,6.7,65.2,41,2.8,Urgent
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Social protection,Call centre,152,117,5.5,89.0,35,3.6,Watch
+2026-06,Masvingo,Chiredzi,Rural,-21.049,31.666,Citizen documentation,WhatsApp,178,155,4.6,74.2,23,3.5,Normal
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Water & sanitation,Walk-in,155,101,5.4,81.1,54,3.3,Urgent
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Roads & transport,WhatsApp,107,78,5.1,65.6,29,3.6,Watch
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Business licensing,Walk-in,99,84,5.3,70.1,15,3.8,Normal
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Waste management,Walk-in,288,214,4.6,80.4,74,3.7,Watch
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Social protection,Walk-in,222,170,3.9,69.7,52,4.1,Watch
+2026-06,Matabeleland North,Hwange,Rural,-18.3693,26.5,Citizen documentation,Call centre,98,75,6.3,66.1,23,3.8,Watch
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Water & sanitation,WhatsApp,190,176,2.9,84.8,14,3.5,Normal
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Roads & transport,Walk-in,118,100,5.3,73.7,18,3.6,Normal
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Business licensing,Walk-in,330,288,6.1,69.6,42,3.2,Normal
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Waste management,Walk-in,199,165,4.2,78.3,34,3.4,Normal
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Social protection,Community officer,226,164,7.9,63.0,62,3.0,Watch
+2026-06,Matabeleland North,Lupane,Rural,-18.9315,27.8069,Citizen documentation,WhatsApp,202,149,7.2,69.2,53,3.7,Watch
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Water & sanitation,WhatsApp,568,496,3.1,84.6,72,3.7,Normal
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Roads & transport,WhatsApp,608,561,4.7,73.9,47,4.3,Normal
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Business licensing,Call centre,382,295,7.1,67.8,87,3.2,Watch
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Waste management,Call centre,554,484,2.0,87.7,70,3.9,Normal
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Social protection,Web portal,790,596,4.1,88.0,194,3.4,Watch
+2026-06,Matabeleland South,Gwanda,Urban,-20.9362,29.0069,Citizen documentation,WhatsApp,583,501,2.7,90.3,82,4.3,Normal
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Water & sanitation,WhatsApp,374,314,5.1,84.4,60,3.9,Normal
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Roads & transport,Call centre,377,309,8.7,61.8,68,3.3,Watch
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Business licensing,Web portal,315,217,4.4,75.2,98,2.9,Urgent
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Waste management,Walk-in,320,206,4.3,73.6,114,3.4,Urgent
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Social protection,Web portal,393,359,4.7,89.3,34,3.6,Normal
+2026-06,Matabeleland South,Beitbridge,Border,-22.2167,30.0,Citizen documentation,Community officer,262,217,4.6,82.7,45,3.8,Normal
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Water & sanitation,WhatsApp,545,521,3.0,82.1,24,4.0,Normal
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Roads & transport,Call centre,431,306,3.9,92.3,125,3.4,Watch
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Business licensing,Walk-in,736,525,5.7,87.0,211,3.7,Watch
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Waste management,WhatsApp,548,398,5.7,73.1,150,3.2,Watch
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Social protection,Web portal,430,364,1,97,66,4.1,Normal
+2026-06,Midlands,Gweru,Urban,-19.45,29.8167,Citizen documentation,WhatsApp,486,373,1.4,90.2,113,3.7,Watch
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Water & sanitation,WhatsApp,671,546,5.9,81.4,125,3.6,Watch
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Roads & transport,Community officer,513,400,8.0,70.2,113,3.1,Watch
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Business licensing,WhatsApp,537,476,2.0,95.7,61,4.0,Normal
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Waste management,Walk-in,636,492,1.6,86.3,144,3.9,Watch
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Social protection,Call centre,413,305,3.9,93.5,108,3.7,Watch
+2026-06,Midlands,Kwekwe,Urban,-18.9281,29.8149,Citizen documentation,Community officer,713,600,4.5,72.0,113,3.3,Normal
