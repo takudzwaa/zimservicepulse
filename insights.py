@@ -316,7 +316,7 @@ def to_pdf(
     def section(title: str) -> None:
         pdf.set_x(14)
         pdf.set_font("Helvetica", "B", 12)
-        pdf.set_text_color(31, 78, 121)
+        pdf.set_text_color(0, 112, 24)  # logo green #007018
         pdf.cell(182, 7, title, new_x="LMARGIN", new_y="NEXT")
         pdf.set_text_color(40, 40, 40)
 

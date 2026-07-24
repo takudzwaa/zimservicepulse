@@ -15,9 +15,21 @@ import insights as insights_engine
 from data_loader import PRIORITY_ORDER, load_data, load_province_geojson
 from metrics import district_summary, group_summary, kpis, month_trend
 
-PRIMARY = "#1F4E79"
-ALERT = "#D64541"
-PRESSURE_SCALE = "YlOrRd"  # colour-blind friendly sequential scale
+# Brand palette from the ZimServicePulse logo (Zimbabwe flag colours)
+PRIMARY = "#007018"   # green — "Zim" / pulse start
+ALERT = "#E80010"     # red — "Pulse" / urgent
+GOLD = "#F8D800"      # yellow — bird / flag stripe
+INK = "#111111"       # near-black — logo field / body
+PRESSURE_SCALE = [    # low pressure → high pressure
+    [0.0, PRIMARY],
+    [0.45, GOLD],
+    [1.0, ALERT],
+]
+QUALITY_SCALE = [     # low quality → high quality
+    [0.0, ALERT],
+    [0.5, GOLD],
+    [1.0, PRIMARY],
+]
 
 ROOT = Path(__file__).resolve().parent
 LOGO_PATH = ROOT / "assets" / "logo.png"
@@ -34,37 +46,79 @@ st.set_page_config(
 st.markdown(
     f"""
     <style>
+      /* Soft green-tinted canvas — not flat white, not cream */
+      .stApp {{
+        background:
+          radial-gradient(1200px 500px at 0% -10%, {PRIMARY}14, transparent 55%),
+          radial-gradient(900px 420px at 100% 0%, {ALERT}0A, transparent 50%),
+          linear-gradient(180deg, #F5F7F4 0%, #EEF2EC 100%);
+      }}
+      [data-testid="stSidebar"] {{
+        background: linear-gradient(180deg, #111111 0%, #111111 7.5rem, #F5F7F4 7.5rem);
+        border-right: 3px solid {GOLD};
+      }}
+      [data-testid="stSidebar"] [data-testid="stImage"] {{
+        margin: 0.15rem 0 0.5rem 0;
+      }}
+      [data-testid="stSidebar"] h2,
+      [data-testid="stSidebar"] h3 {{
+        color: {PRIMARY} !important;
+      }}
       h1, h2, h3 {{ color: {PRIMARY}; }}
       .block-container {{ padding-top: 1.2rem; }}
-      .zsp-banner {{
-        background: {PRIMARY}; color: white; padding: 0.9rem 1.2rem;
-        border-radius: 0.5rem; font-size: 1.02rem; margin-bottom: 0.8rem;
+      .zsp-tagline {{
+        color: {INK};
+        margin: 0.15rem 0 0.35rem 0;
+        line-height: 1.45;
       }}
+      .zsp-tagline em {{ color: {PRIMARY}; font-style: italic; }}
+      .zsp-tagline small {{ color: #4A4A4A; }}
+      .zsp-banner {{
+        background: linear-gradient(105deg, {PRIMARY} 0%, #005A14 55%, {INK} 100%);
+        color: white; padding: 0.95rem 1.25rem;
+        border-radius: 0.55rem; font-size: 1.02rem; margin-bottom: 0.8rem;
+        border-left: 5px solid {GOLD};
+        box-shadow: 0 6px 18px {PRIMARY}22;
+      }}
+      .zsp-banner b {{ color: {GOLD}; }}
       .zsp-badge-high, .zsp-badge-medium {{
         display: inline-block; padding: 0.1rem 0.55rem; border-radius: 1rem;
         font-size: 0.75rem; font-weight: 700; color: white; margin-right: 0.4rem;
       }}
       .zsp-badge-high {{ background: {ALERT}; }}
-      .zsp-badge-medium {{ background: #E67E22; }}
+      .zsp-badge-medium {{ background: {GOLD}; color: {INK}; }}
       .zsp-nav {{ display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.4rem 0 1rem 0; }}
       .zsp-nav a {{
         display: inline-flex; align-items: center; gap: 0.45rem;
         padding: 0.42rem 1rem; border-radius: 2rem;
-        border: 1px solid {PRIMARY}33; background: {PRIMARY}0D;
+        border: 1px solid {PRIMARY}40; background: white;
         color: {PRIMARY} !important; text-decoration: none !important;
         font-weight: 600; font-size: 0.88rem;
-        transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+        transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease,
+                    border-color 0.15s ease;
       }}
       .zsp-nav a:hover {{
         background: {PRIMARY}; color: white !important;
-        box-shadow: 0 2px 8px {PRIMARY}55; transform: translateY(-1px);
+        border-color: {PRIMARY};
+        box-shadow: 0 2px 10px {PRIMARY}44; transform: translateY(-1px);
       }}
       .zsp-nav a span {{
         display: inline-flex; align-items: center; justify-content: center;
         width: 1.35rem; height: 1.35rem; border-radius: 50%;
         background: {PRIMARY}; color: white; font-size: 0.72rem; font-weight: 700;
       }}
-      .zsp-nav a:hover span {{ background: white; color: {PRIMARY}; }}
+      .zsp-nav a:hover span {{ background: {GOLD}; color: {INK}; }}
+      /* Metric cards — thin gold accent, no heavy card chrome */
+      [data-testid="stMetric"] {{
+        background: rgba(255,255,255,0.72);
+        border-top: 3px solid {GOLD};
+        padding: 0.65rem 0.85rem 0.55rem;
+        border-radius: 0 0 0.4rem 0.4rem;
+      }}
+      div[data-baseweb="tab-list"] button[aria-selected="true"] {{
+        color: {PRIMARY} !important;
+        border-bottom-color: {PRIMARY} !important;
+      }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -74,19 +128,16 @@ df, excluded_rows = load_data()
 geojson = load_province_geojson()
 
 # ---------------------------------------------------------------- header
-logo_col, title_col = st.columns([1.35, 2.65], vertical_alignment="center")
-with logo_col:
-    if LOGO_PATH.exists():
-        st.image(str(LOGO_PATH), width="stretch")
-    else:
-        st.title("ZimServicePulse")
-with title_col:
-    st.markdown(
-        "**Citizen Service Hotspot & Channel Optimizer**  \n"
-        "*See the pressure. Act with precision.*  \n"
-        "<small>Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe</small>",
-        unsafe_allow_html=True,
-    )
+st.markdown(
+    """
+    <div class="zsp-tagline">
+      <strong>Citizen Service Hotspot &amp; Channel Optimizer</strong><br>
+      <em>See the pressure. Act with precision.</em><br>
+      <small>Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe</small>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 st.markdown(
     """
     <div class="zsp-nav">
@@ -237,7 +288,7 @@ if len(trend) >= 2:
             go.Scatter(
                 x=trend["month"], y=trend["satisfaction"] * 20,  # scale 0–5 → 0–100 for shared axis
                 mode="lines+markers", name="Satisfaction (×20)",
-                line={"color": "#E67E22", "dash": "dot"},
+                line={"color": GOLD, "dash": "dot"},
                 hovertemplate="%{customdata:.2f}/5<extra>Satisfaction</extra>",
                 customdata=trend["satisfaction"],
             )
@@ -338,7 +389,7 @@ with map_col:
                     fig.add_trace(
                         go.Scatter(
                             x=lons, y=lats, mode="lines",
-                            line={"color": "#9AAABF", "width": 1},
+                            line={"color": "#5A6B5C", "width": 1},
                             hoverinfo="skip", showlegend=False,
                         )
                     )
@@ -402,7 +453,7 @@ with charts_col:
             y="primary_channel",
             orientation="h",
             color="satisfaction",
-            color_continuous_scale=[[0, ALERT], [1, PRIMARY]],
+            color_continuous_scale=QUALITY_SCALE,
             labels={
                 "on_time_pct": "Resolved on time (%)",
                 "primary_channel": "",
@@ -420,7 +471,7 @@ with charts_col:
             y="settlement_type",
             orientation="h",
             color="satisfaction",
-            color_continuous_scale=[[0, ALERT], [1, PRIMARY]],
+            color_continuous_scale=QUALITY_SCALE,
             labels={
                 "unresolved_backlog": "Unresolved backlog",
                 "settlement_type": "",
@@ -434,7 +485,8 @@ st.subheader("Top pressure districts")
 urgent_count = int(districts_view["has_urgent"].sum())
 st.caption(
     f"{urgent_count} of {len(districts_view)} districts are in the **top quartile** "
-    f"for unresolved Urgent backlog (Status = Urgent)."
+    f"for unresolved Urgent backlog. Status is the district’s dominant "
+    f"`priority_flag` by unresolved backlog (Urgent / Watch / Normal)."
 )
 table = districts_view.head(10)[
     ["urgent_flag", "district", "province", "settlement_type", "requests_received",
@@ -526,7 +578,7 @@ if drill_district != "— Select a district —":
             y="primary_channel",
             orientation="h",
             color="satisfaction",
-            color_continuous_scale=[[0, ALERT], [1, PRIMARY]],
+            color_continuous_scale=QUALITY_SCALE,
             labels={
                 "on_time_pct": "On time %",
                 "primary_channel": "",

@@ -8,6 +8,8 @@ five requests skew national figures. Formulas are documented in BRIEF.md §6.
 import numpy as np
 import pandas as pd
 
+from data_loader import PRIORITY_ORDER
+
 
 def weighted_mean(df: pd.DataFrame, value_col: str, weight_col: str = "requests_received") -> float:
     weights = df[weight_col]
@@ -38,6 +40,22 @@ def _minmax(s: pd.Series) -> pd.Series:
     return (s - s.min()) / rng
 
 
+def _status_from_priority(g: pd.DataFrame) -> str:
+    """District Status = priority_flag with the largest unresolved backlog.
+
+    Ties break toward higher severity (Urgent > Watch > Normal).
+    """
+    by_flag = g.groupby("priority_flag", observed=True)["unresolved_backlog"].sum()
+    if by_flag.empty:
+        return ""
+    max_backlog = by_flag.max()
+    tied = set(by_flag[by_flag == max_backlog].index.astype(str))
+    for level in PRIORITY_ORDER:
+        if level in tied:
+            return level
+    return str(by_flag.idxmax())
+
+
 def district_summary(df: pd.DataFrame) -> pd.DataFrame:
     """One row per district with weighted KPIs and a 0-100 pressure score.
 
@@ -61,6 +79,8 @@ def district_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "urgent_backlog": int(
                     g.loc[g["priority_flag"] == "Urgent", "unresolved_backlog"].sum()
                 ),
+                # From dataset priority_flag (dominant by unresolved backlog)
+                "urgent_flag": _status_from_priority(g),
             }
         )
     out = pd.DataFrame(groups)
@@ -82,7 +102,6 @@ def district_summary(df: pd.DataFrame) -> pd.DataFrame:
         out["has_urgent"] = out["urgent_backlog"] >= max(threshold, 1)
     else:
         out["has_urgent"] = False
-    out["urgent_flag"] = out["has_urgent"].map({True: "Urgent", False: "—"})
     return out.sort_values("pressure_score", ascending=False).reset_index(drop=True)
 
 
