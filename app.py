@@ -4,6 +4,8 @@ Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe
 Storytelling flow: 1 Overview -> 2 Exploration -> 3 Insights -> 4 Actions.
 """
 
+from pathlib import Path
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -17,9 +19,14 @@ PRIMARY = "#1F4E79"
 ALERT = "#D64541"
 PRESSURE_SCALE = "YlOrRd"  # colour-blind friendly sequential scale
 
+ROOT = Path(__file__).resolve().parent
+LOGO_PATH = ROOT / "assets" / "logo.png"
+FAVICON_PATH = ROOT / "assets" / "favicon.png"
+SIDEBAR_LOGO_PATH = ROOT / "assets" / "logo_sidebar.png"
+
 st.set_page_config(
     page_title="ZimServicePulse",
-    page_icon="📍",
+    page_icon=str(FAVICON_PATH if FAVICON_PATH.exists() else LOGO_PATH),
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -67,13 +74,19 @@ df, excluded_rows = load_data()
 geojson = load_province_geojson()
 
 # ---------------------------------------------------------------- header
-st.title("ZimServicePulse")
-st.markdown(
-    "**Citizen Service Hotspot & Channel Optimizer** — "
-    "*See the pressure. Act with precision.*  \n"
-    "<small>Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe</small>",
-    unsafe_allow_html=True,
-)
+logo_col, title_col = st.columns([1.35, 2.65], vertical_alignment="center")
+with logo_col:
+    if LOGO_PATH.exists():
+        st.image(str(LOGO_PATH), width="stretch")
+    else:
+        st.title("ZimServicePulse")
+with title_col:
+    st.markdown(
+        "**Citizen Service Hotspot & Channel Optimizer**  \n"
+        "*See the pressure. Act with precision.*  \n"
+        "<small>Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe</small>",
+        unsafe_allow_html=True,
+    )
 st.markdown(
     """
     <div class="zsp-nav">
@@ -93,6 +106,10 @@ FILTER_KEYS = [
 ]
 
 with st.sidebar:
+    if SIDEBAR_LOGO_PATH.exists():
+        st.image(str(SIDEBAR_LOGO_PATH), width="stretch")
+    elif LOGO_PATH.exists():
+        st.image(str(LOGO_PATH), width="stretch")
     st.header("Filters")
     st.caption("Empty selection = everything included.")
 

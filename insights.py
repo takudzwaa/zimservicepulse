@@ -276,6 +276,7 @@ def to_pdf(
 ) -> bytes:
     """Build a briefing PDF from the current KPIs, insights, and actions."""
     from io import BytesIO
+    from pathlib import Path
 
     from fpdf import FPDF
 
@@ -284,18 +285,28 @@ def to_pdf(
     pdf.set_margins(left=14, top=12, right=14)
     pdf.add_page()
 
-    pdf.set_fill_color(31, 78, 121)  # #1F4E79
-    pdf.rect(0, 0, 210, 28, "F")
+    assets = Path(__file__).resolve().parent / "assets"
+    logo_path = next(
+        (p for p in (assets / "logo_pdf.png", assets / "logo.png") if p.exists()),
+        None,
+    )
+    pdf.set_fill_color(24, 24, 28)  # near-black matches official logo field
+    pdf.rect(0, 0, 210, 32, "F")
+    header_text_x = 14
+    if logo_path is not None:
+        # Wide wordmark along the dark header bar
+        pdf.image(str(logo_path), x=10, y=6, h=20)
+        header_text_x = 115
     pdf.set_text_color(255, 255, 255)
-    pdf.set_font("Helvetica", "B", 15)
-    pdf.set_xy(14, 8)
-    pdf.cell(182, 8, "ZimServicePulse - Insight & Action Briefing")
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.set_xy(header_text_x, 8)
+    pdf.cell(210 - header_text_x - 10, 8, "Insight & Action Briefing")
     pdf.set_font("Helvetica", "", 9)
-    pdf.set_xy(14, 16)
-    pdf.cell(182, 6, "See the pressure. Act with precision.")
+    pdf.set_xy(header_text_x, 16)
+    pdf.cell(210 - header_text_x - 10, 6, "See the pressure. Act with precision.")
 
     pdf.set_text_color(40, 40, 40)
-    pdf.set_xy(14, 34)
+    pdf.set_xy(14, 38)
     pdf.set_font("Helvetica", "", 10)
     pdf.multi_cell(182, 5, f"Scope: {_plain(context)}")
     pdf.set_x(14)
