@@ -2,72 +2,80 @@
 
 **Citizen Service Hotspot & Channel Optimizer** — *See the pressure. Act with precision.*
 
-Prototype for the POTRAZ AI4I 2026 Challenge (Design Track) by PulseForge
-Zimbabwe. An interactive decision-support dashboard that shows Zimbabwean
-local authorities where public services are under pressure and generates
-prioritised, location-aware recommended actions — all computed live from the
-official dataset.
+Next.js operations console for the POTRAZ AI4I 2026 Challenge (Design Track) by
+PulseForge Zimbabwe. Role-aware homes, command-center alerts, deeper analysis,
+action workflow, and export packs — all computed live from the official CSV.
+
+The previous Streamlit prototype is preserved under [`legacy/streamlit/`](legacy/streamlit/).
 
 ## Run
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
+cp .env.example .env.local
+npm install
+npm run db:seed   # optional — users also auto-seed on first request
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000).
 
 Requires `data/01_public_service_requests.csv` (official AI4I dataset).
 
-## Deploy on Streamlit Community Cloud
+### Demo accounts (PIN `Zim2026!`)
 
-1. Open [share.streamlit.io](https://share.streamlit.io/) and sign in with GitHub.
-2. Click **Create app** → **Yup, I have an app**.
-3. Use these settings:
-   - **Repository:** `takudzwaa/zimservicepulse`
-   - **Branch:** `main`
-   - **Main file path:** `app.py`
-4. Optional: set a custom subdomain (e.g. `zimservicepulse`) and Python **3.12**.
-5. Click **Deploy**.
+| Email | Role |
+|---|---|
+| `district@pulse.zw` | District Manager (Chinhoyi) |
+| `analyst@pulse.zw` | Provincial Analyst |
+| `channels@pulse.zw` | Channel Lead |
+| `admin@pulse.zw` | Admin |
 
-Direct link (pre-filled):  
-https://share.streamlit.io/deploy?repository=takudzwaa/zimservicepulse&branch=main&mainModule=app.py
+## Scripts
 
-After the first deploy, every `git push` to `main` updates the live app.
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local development |
+| `npm run build` / `start` | Production build |
+| `npm run test` | Golden KPI / insights Vitest suite |
+| `npm run typecheck` | TypeScript |
+| `npm run lint` | ESLint |
+| `GET /api/health` | Liveness: DB + CSV row count |
 
-## Demoing without internet
+## Deploy on Vercel
 
-The default map uses OpenStreetMap tiles. At a venue without Wi-Fi, switch on
-**Offline map mode** in the sidebar — it renders district bubbles over the
-bundled province outlines (`assets/zw_provinces.geojson`) with no network
-access. Everything else (Plotly, fonts, data) is already served locally.
+1. Import the GitHub repo in Vercel.
+2. Set env vars: `AUTH_SECRET` (random), `DEMO_PIN`, optional `DATABASE_URL` (Neon Postgres).
+3. Without `DATABASE_URL`, the app uses local PGlite (fine for demos; use Neon for production serverless).
+4. Deploy. Framework preset: Next.js.
 
-If the environment ever needs rebuilding offline, install from the vendored
-wheels (kept on the demo laptop in `vendor/wheels/`, not in git):
+For the full Neon setup, database-release workflow, health check, and rollback
+procedure, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
-```bash
-pip install --no-index --find-links vendor/wheels -r requirements.txt
-```
+## Product modules
 
-To refresh the wheel cache while online: `pip download -r requirements.txt -d vendor/wheels`.
+- **Role homes** — district manager / provincial analyst / channel lead lenses
+- **Command center** — alert inbox, severity triage, mark-read, push to workflow
+- **Explore** — filters (URL-synced), hotspot map (offline toggle), rankings, presets
+- **Analysis** — cohort compare, channel ROI, backlog aging proxy, next-month forecast
+- **Workflow** — assign / status / comments + CSV / Markdown / PDF export packs
+- **`/briefing`** — AI4I 4-step pitch story (Overview → Explore → Insights → Actions)
+
+## Design decisions
+
+- **Weighted metrics.** Rows are aggregates; satisfaction and on-time rates are
+  weighted by request volume (`BRIEF.md` §6).
+- **Pressure score** (0–100): 50% backlog + 25% late resolution + 25% low
+  satisfaction, min-max normalised across districts in view.
+- **No invented numbers.** Insights and actions come from a pure rules engine
+  over the filtered dataframe.
+- **Auth.** Auth.js credentials with role + PIN (bcrypt).
 
 ## Project structure
 
-| File | Purpose |
-|---|---|
-| `app.py` | Layout and the 4-step storytelling flow (Overview → Explore → Insights → Actions) |
-| `data_loader.py` | Cached CSV loading and validation |
-| `metrics.py` | Weighted KPIs and the district pressure score |
-| `insights.py` | Deterministic rules engine for insight cards and actions (+ PDF export) |
-| `BRIEF.md` | Refined project brief incl. data contract and metric definitions |
-| `ROADMAP.md` | Build roadmap and bootcamp plan |
-
-## Key design decisions
-
-- **Weighted metrics.** Rows are aggregates, so satisfaction and on-time
-  rates are weighted by request volume (see `BRIEF.md` §6).
-- **Pressure score** (0–100): 50% backlog + 25% late resolution + 25% low
-  satisfaction, min-max normalised across districts in view.
-- **No invented numbers.** Insights and actions come from a pure rules
-  engine over the filtered dataframe; a rule that finds nothing shows
-  nothing.
+```
+src/app/(app)/     # Authenticated console routes
+src/app/(auth)/    # Login
+src/lib/           # metrics, insights, forecast, analysis, auth, db
+data/              # Official CSV (+ local PGlite dir, gitignored)
+legacy/streamlit/  # Previous prototype
+```
