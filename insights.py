@@ -2,7 +2,7 @@
 
 `generate(df)` is a pure function: filtered dataframe in, ranked list of
 Insight objects out. Every number in an insight is computed from the data.
-A rule that finds nothing simply emits nothing — no filler text.
+A rule that finds nothing simply emits nothing - no filler text.
 """
 
 from dataclasses import dataclass
@@ -11,7 +11,7 @@ import pandas as pd
 
 from metrics import district_summary, group_summary, weighted_mean
 
-# Rule thresholds — tuned to be meaningful, not magic. Documented so judges
+# Rule thresholds - tuned to be meaningful, not magic. Documented so judges
 # can see the engine is transparent.
 CHANNEL_GAP_MIN_PTS = 5.0       # min on-time gap (pct points) worth reporting
 SATISFACTION_FLOOR = 3.0        # weighted satisfaction below this is a red flag
@@ -28,7 +28,7 @@ class Insight:
     kind: str = "general"  # backlog | channel | urgent | satisfaction | slow
 
 
-# What-if focus modes — reorder actions without inventing new ones.
+# What-if focus modes - reorder actions without inventing new ones.
 FOCUS_OPTIONS = {
     "Balanced (default severity)": None,
     "Clear urgent backlog first": "urgent",
@@ -124,7 +124,7 @@ def _channel_gap(df: pd.DataFrame) -> Insight | None:
         body=(
             f"Requests via **{best['primary_channel']}** are resolved on time "
             f"**{best['on_time_pct']:.0f}%** of the time vs "
-            f"**{worst['on_time_pct']:.0f}%** for {worst['primary_channel']} — "
+            f"**{worst['on_time_pct']:.0f}%** for {worst['primary_channel']} - "
             f"a gap of {gap:.0f} percentage points."
         ),
         severity="high" if gap >= 15 else "medium",
@@ -247,7 +247,7 @@ def to_markdown(insights: list[Insight], kpi: dict, context: str) -> str:
         lines += [f"{i}. **{ins.title}** ({ins.severity.upper()})", f"   {ins.body}", ""]
     lines.append("## Recommended actions")
     for i, ins in enumerate(insights, 1):
-        lines += [f"{i}. **{ins.action_title}** — {ins.action_body}"]
+        lines += [f"{i}. **{ins.action_title}** - {ins.action_body}"]
     return "\n".join(lines).replace("**", "")
 
 
@@ -256,7 +256,6 @@ def _plain(text: str) -> str:
     return (
         text.replace("**", "")
         .replace("*", "")
-        .replace("—", "-")
         .replace("–", "-")
         .replace("×", "x")
         .replace("·", "-")

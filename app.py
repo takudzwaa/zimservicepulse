@@ -16,10 +16,10 @@ from data_loader import PRIORITY_ORDER, load_data, load_province_geojson
 from metrics import district_summary, group_summary, kpis, month_trend
 
 # Brand palette from the ZimServicePulse logo (Zimbabwe flag colours)
-PRIMARY = "#007018"   # green — "Zim" / pulse start
-ALERT = "#E80010"     # red — "Pulse" / urgent
-GOLD = "#F8D800"      # yellow — bird / flag stripe
-INK = "#111111"       # near-black — logo field / body
+PRIMARY = "#007018"   # green - "Zim" / pulse start
+ALERT = "#E80010"     # red - "Pulse" / urgent
+GOLD = "#F8D800"      # yellow - bird / flag stripe
+INK = "#111111"       # near-black - logo field / body
 PRESSURE_SCALE = [    # low pressure → high pressure
     [0.0, PRIMARY],
     [0.45, GOLD],
@@ -46,7 +46,7 @@ st.set_page_config(
 st.markdown(
     f"""
     <style>
-      /* Soft green-tinted canvas — not flat white, not cream */
+      /* Soft green-tinted canvas - not flat white, not cream */
       .stApp {{
         background:
           radial-gradient(1200px 500px at 0% -10%, {PRIMARY}14, transparent 55%),
@@ -109,7 +109,7 @@ st.markdown(
         background: {PRIMARY}; color: white; font-size: 0.72rem; font-weight: 700;
       }}
       .zsp-nav a:hover span {{ background: {GOLD}; color: {INK}; }}
-      /* Metric cards — thin gold accent, no heavy card chrome */
+      /* Metric cards - thin gold accent, no heavy card chrome */
       [data-testid="stMetric"] {{
         background: rgba(255,255,255,0.72);
         border-top: 3px solid {GOLD};
@@ -189,7 +189,7 @@ with st.sidebar:
     def _reset_filters() -> None:
         for key in FILTER_KEYS:
             st.session_state[key] = []
-        st.session_state["drill_district"] = "— Select a district —"
+        st.session_state["drill_district"] = "- Select a district -"
         st.session_state["action_focus"] = "Balanced (default severity)"
         st.session_state["high_only"] = False
 
@@ -219,7 +219,7 @@ for col, selected in [
     if selected:
         filtered = filtered[filtered[col].isin(selected)]
         filter_desc.append(f"{col.replace('_', ' ')}: {', '.join(map(str, selected))}")
-scope = "; ".join(filter_desc) if filter_desc else "National — all data"
+scope = "; ".join(filter_desc) if filter_desc else "National - all data"
 
 if filtered.empty:
     st.warning(
@@ -242,7 +242,7 @@ st.markdown(
     <b>{kpi['total_requests']:,}</b> service requests and
     <b>{kpi['backlog']:,}</b> remain unresolved
     ({kpi['backlog_pct']:.1f}%). ZimServicePulse shows <b>where</b> that pressure
-    is concentrated — and what to do about it.</div>""",
+    is concentrated - and what to do about it.</div>""",
     unsafe_allow_html=True,
 )
 
@@ -310,7 +310,7 @@ st.caption(
     "Bubble size = request volume · colour = pressure score "
     "(50% backlog + 25% late resolution + 25% low satisfaction). "
     "Red rings/halos mark districts in the **top quartile** of urgent backlog. "
-    "Use the sidebar filters — everything on this page updates together."
+    "Use the sidebar filters - everything on this page updates together."
 )
 
 hover = {
@@ -355,7 +355,7 @@ if not offline_map:
                     "opacity": 0.4,
                 },
                 name="Urgent hotspot",
-                text=urgent["district"] + " — Urgent backlog: "
+                text=urgent["district"] + " - Urgent backlog: "
                 + urgent["urgent_backlog"].astype(str),
                 hoverinfo="text",
                 showlegend=True,
@@ -404,7 +404,7 @@ else:
                     "symbol": "circle-open",
                 },
                 name="Urgent hotspot",
-                text=urgent["district"] + " — Urgent: "
+                text=urgent["district"] + " - Urgent: "
                 + urgent["urgent_backlog"].astype(str),
                 hoverinfo="text",
                 showlegend=True,
@@ -520,11 +520,11 @@ st.caption(
 district_options = districts_view["district"].tolist()
 drill_district = st.selectbox(
     "District",
-    options=["— Select a district —"] + district_options,
+    options=["- Select a district -"] + district_options,
     key="drill_district",
 )
 
-if drill_district != "— Select a district —":
+if drill_district != "- Select a district -":
     drill_df = filtered[filtered["district"] == drill_district]
     drill_kpi = kpis(drill_df)
     drill_meta = districts_view.loc[
@@ -592,7 +592,7 @@ st.caption(f"Auto-generated from the filtered data · scope: {scope}")
 
 insight_list = insights_engine.generate(filtered)
 if not insight_list:
-    st.info("No rule-based insights fire for this selection — widen the filters.")
+    st.info("No rule-based insights fire for this selection - widen the filters.")
 else:
     cols = st.columns(min(3, len(insight_list)))
     for i, ins in enumerate(insight_list):
@@ -623,12 +623,12 @@ if insight_list:
 
     if focus_kind:
         st.caption(
-            f"Focus active: **{focus_label}** — matching actions move to the top. "
+            f"Focus active: **{focus_label}** - matching actions move to the top. "
             "Numbers stay identical; only the order changes."
         )
 
     if not ranked:
-        st.info("No high-priority actions in this selection — turn off the filter to see all.")
+        st.info("No high-priority actions in this selection - turn off the filter to see all.")
     else:
         for i, ins in enumerate(ranked, 1):
             with st.container(border=True):
@@ -675,6 +675,6 @@ d3.download_button(
 )
 
 st.caption(
-    "All figures computed live from data/01_public_service_requests.csv — "
+    "All figures computed live from data/01_public_service_requests.csv - "
     "nothing is hardcoded. Metric definitions: BRIEF.md §6."
 )
