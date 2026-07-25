@@ -54,7 +54,7 @@ st.markdown(
           linear-gradient(180deg, #F5F7F4 0%, #EEF2EC 100%);
       }}
       [data-testid="stSidebar"] {{
-        background: linear-gradient(180deg, #111111 0%, #111111 7.5rem, #F5F7F4 7.5rem);
+        background: #F5F7F4;
         border-right: 3px solid {GOLD};
       }}
       [data-testid="stSidebar"] [data-testid="stImage"] {{
@@ -87,6 +87,7 @@ st.markdown(
       }}
       .zsp-badge-high {{ background: {ALERT}; }}
       .zsp-badge-medium {{ background: {GOLD}; color: {INK}; }}
+      .zsp-chart-gap {{ height: 1.75rem; }}
       .zsp-nav {{ display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.4rem 0 1rem 0; }}
       .zsp-nav a {{
         display: inline-flex; align-items: center; gap: 0.45rem;
@@ -260,45 +261,44 @@ c4.metric("Resolved on time", f"{kpi['on_time_pct']:.1f}%",
 trend = month_trend(filtered)
 if len(trend) >= 2:
     st.subheader("Month-over-month trend")
-    t1, t2 = st.columns(2)
-    with t1:
-        fig_backlog = px.line(
-            trend,
-            x="month",
-            y="unresolved_backlog",
-            markers=True,
-            labels={"month": "Month", "unresolved_backlog": "Unresolved backlog"},
+    fig_backlog = px.line(
+        trend,
+        x="month",
+        y="unresolved_backlog",
+        markers=True,
+        labels={"month": "Month", "unresolved_backlog": "Unresolved backlog"},
+    )
+    fig_backlog.update_traces(line_color=ALERT, marker_color=ALERT)
+    fig_backlog.update_layout(
+        height=280, margin={"l": 0, "r": 10, "t": 10, "b": 0},
+        yaxis_title="Backlog",
+    )
+    st.plotly_chart(fig_backlog, width="stretch")
+    st.markdown('<div class="zsp-chart-gap"></div>', unsafe_allow_html=True)
+
+    fig_quality = go.Figure()
+    fig_quality.add_trace(
+        go.Scatter(
+            x=trend["month"], y=trend["on_time_pct"],
+            mode="lines+markers", name="On time %",
+            line={"color": PRIMARY},
         )
-        fig_backlog.update_traces(line_color=ALERT, marker_color=ALERT)
-        fig_backlog.update_layout(
-            height=220, margin={"l": 0, "r": 10, "t": 10, "b": 0},
-            yaxis_title="Backlog",
+    )
+    fig_quality.add_trace(
+        go.Scatter(
+            x=trend["month"], y=trend["satisfaction"] * 20,  # scale 0–5 → 0–100 for shared axis
+            mode="lines+markers", name="Satisfaction (×20)",
+            line={"color": GOLD, "dash": "dot"},
+            hovertemplate="%{customdata:.2f}/5<extra>Satisfaction</extra>",
+            customdata=trend["satisfaction"],
         )
-        st.plotly_chart(fig_backlog, width="stretch")
-    with t2:
-        fig_quality = go.Figure()
-        fig_quality.add_trace(
-            go.Scatter(
-                x=trend["month"], y=trend["on_time_pct"],
-                mode="lines+markers", name="On time %",
-                line={"color": PRIMARY},
-            )
-        )
-        fig_quality.add_trace(
-            go.Scatter(
-                x=trend["month"], y=trend["satisfaction"] * 20,  # scale 0–5 → 0–100 for shared axis
-                mode="lines+markers", name="Satisfaction (×20)",
-                line={"color": GOLD, "dash": "dot"},
-                hovertemplate="%{customdata:.2f}/5<extra>Satisfaction</extra>",
-                customdata=trend["satisfaction"],
-            )
-        )
-        fig_quality.update_layout(
-            height=220, margin={"l": 0, "r": 10, "t": 10, "b": 0},
-            yaxis_title="On time % / Satisfaction×20",
-            legend={"orientation": "h", "y": 1.15},
-        )
-        st.plotly_chart(fig_quality, width="stretch")
+    )
+    fig_quality.update_layout(
+        height=280, margin={"l": 0, "r": 10, "t": 10, "b": 0},
+        yaxis_title="On time % / Satisfaction×20",
+        legend={"orientation": "h", "y": 1.15},
+    )
+    st.plotly_chart(fig_quality, width="stretch")
     st.caption(
         "Satisfaction is shown ×20 so it can share the axis with on-time % "
         "(e.g. 3.5/5 → 70). Hover shows the true /5 value."
@@ -313,173 +313,171 @@ st.caption(
     "Use the sidebar filters — everything on this page updates together."
 )
 
-map_col, charts_col = st.columns([3, 2], gap="medium")
-
-with map_col:
-    hover = {
-        "province": True,
-        "requests_received": ":,",
-        "unresolved_backlog": ":,",
-        "urgent_backlog": ":,",
-        "urgent_flag": True,
-        "satisfaction": ":.2f",
-        "on_time_pct": ":.1f",
-        "pressure_score": ":.0f",
-        "latitude": False,
-        "longitude": False,
-        "has_urgent": False,
-        "urgent_share": False,
-    }
-    if not offline_map:
-        fig = px.scatter_map(
-            districts_view,
-            lat="latitude",
-            lon="longitude",
-            size="requests_received",
-            color="pressure_score",
-            color_continuous_scale=PRESSURE_SCALE,
-            size_max=40,
-            zoom=5.1,
-            center={"lat": -19.0, "lon": 29.8},
-            hover_name="district",
-            hover_data=hover,
-            map_style="open-street-map",
-        )
-        urgent = districts_view[districts_view["has_urgent"]]
-        if not urgent.empty:
-            fig.add_trace(
-                go.Scattermap(
-                    lat=urgent["latitude"],
-                    lon=urgent["longitude"],
-                    mode="markers",
-                    marker={
-                        "size": 24,
-                        "color": ALERT,
-                        "opacity": 0.4,
-                    },
-                    name="Urgent hotspot",
-                    text=urgent["district"] + " — Urgent backlog: "
-                    + urgent["urgent_backlog"].astype(str),
-                    hoverinfo="text",
-                    showlegend=True,
-                )
+hover = {
+    "province": True,
+    "requests_received": ":,",
+    "unresolved_backlog": ":,",
+    "urgent_backlog": ":,",
+    "urgent_flag": True,
+    "satisfaction": ":.2f",
+    "on_time_pct": ":.1f",
+    "pressure_score": ":.0f",
+    "latitude": False,
+    "longitude": False,
+    "has_urgent": False,
+    "urgent_share": False,
+}
+if not offline_map:
+    fig = px.scatter_map(
+        districts_view,
+        lat="latitude",
+        lon="longitude",
+        size="requests_received",
+        color="pressure_score",
+        color_continuous_scale=PRESSURE_SCALE,
+        size_max=40,
+        zoom=5.1,
+        center={"lat": -19.0, "lon": 29.8},
+        hover_name="district",
+        hover_data=hover,
+        map_style="open-street-map",
+    )
+    urgent = districts_view[districts_view["has_urgent"]]
+    if not urgent.empty:
+        fig.add_trace(
+            go.Scattermap(
+                lat=urgent["latitude"],
+                lon=urgent["longitude"],
+                mode="markers",
+                marker={
+                    "size": 24,
+                    "color": ALERT,
+                    "opacity": 0.4,
+                },
+                name="Urgent hotspot",
+                text=urgent["district"] + " — Urgent backlog: "
+                + urgent["urgent_backlog"].astype(str),
+                hoverinfo="text",
+                showlegend=True,
             )
-    else:
-        fig = px.scatter(
-            districts_view,
-            x="longitude",
-            y="latitude",
-            size="requests_received",
-            color="pressure_score",
-            color_continuous_scale=PRESSURE_SCALE,
-            size_max=40,
-            hover_name="district",
-            hover_data=hover,
         )
-        if geojson:
-            for feature in geojson["features"]:
-                geom = feature["geometry"]
-                polys = (
-                    geom["coordinates"]
-                    if geom["type"] == "MultiPolygon"
-                    else [geom["coordinates"]]
-                )
-                for poly in polys:
-                    lons, lats = zip(*poly[0])
-                    fig.add_trace(
-                        go.Scatter(
-                            x=lons, y=lats, mode="lines",
-                            line={"color": "#5A6B5C", "width": 1},
-                            hoverinfo="skip", showlegend=False,
-                        )
+else:
+    fig = px.scatter(
+        districts_view,
+        x="longitude",
+        y="latitude",
+        size="requests_received",
+        color="pressure_score",
+        color_continuous_scale=PRESSURE_SCALE,
+        size_max=40,
+        hover_name="district",
+        hover_data=hover,
+    )
+    if geojson:
+        for feature in geojson["features"]:
+            geom = feature["geometry"]
+            polys = (
+                geom["coordinates"]
+                if geom["type"] == "MultiPolygon"
+                else [geom["coordinates"]]
+            )
+            for poly in polys:
+                lons, lats = zip(*poly[0])
+                fig.add_trace(
+                    go.Scatter(
+                        x=lons, y=lats, mode="lines",
+                        line={"color": "#5A6B5C", "width": 1},
+                        hoverinfo="skip", showlegend=False,
                     )
-        urgent = districts_view[districts_view["has_urgent"]]
-        if not urgent.empty:
-            fig.add_trace(
-                go.Scatter(
-                    x=urgent["longitude"],
-                    y=urgent["latitude"],
-                    mode="markers",
-                    marker={
-                        "size": 28,
-                        "color": "rgba(0,0,0,0)",
-                        "line": {"width": 2.5, "color": ALERT},
-                        "symbol": "circle-open",
-                    },
-                    name="Urgent hotspot",
-                    text=urgent["district"] + " — Urgent: "
-                    + urgent["urgent_backlog"].astype(str),
-                    hoverinfo="text",
-                    showlegend=True,
                 )
+    urgent = districts_view[districts_view["has_urgent"]]
+    if not urgent.empty:
+        fig.add_trace(
+            go.Scatter(
+                x=urgent["longitude"],
+                y=urgent["latitude"],
+                mode="markers",
+                marker={
+                    "size": 28,
+                    "color": "rgba(0,0,0,0)",
+                    "line": {"width": 2.5, "color": ALERT},
+                    "symbol": "circle-open",
+                },
+                name="Urgent hotspot",
+                text=urgent["district"] + " — Urgent: "
+                + urgent["urgent_backlog"].astype(str),
+                hoverinfo="text",
+                showlegend=True,
             )
-        fig.update_xaxes(visible=False)
-        fig.update_yaxes(visible=False, scaleanchor="x", scaleratio=1)
-        fig.update_layout(plot_bgcolor="white")
+        )
+    fig.update_xaxes(visible=False)
+    fig.update_yaxes(visible=False, scaleanchor="x", scaleratio=1)
+    fig.update_layout(plot_bgcolor="white")
 
-    fig.update_layout(
-        margin={"l": 0, "r": 0, "t": 0, "b": 0},
-        height=520,
-        coloraxis_colorbar={"title": "Pressure"},
-        legend={"orientation": "h", "y": 1.02, "x": 0},
+fig.update_layout(
+    margin={"l": 0, "r": 0, "t": 0, "b": 0},
+    height=520,
+    coloraxis_colorbar={"title": "Pressure"},
+    legend={"orientation": "h", "y": 1.02, "x": 0},
+)
+st.plotly_chart(fig, width="stretch")
+st.markdown('<div class="zsp-chart-gap"></div>', unsafe_allow_html=True)
+
+st.subheader("Rankings")
+tab_cat, tab_ch, tab_set = st.tabs(
+    ["Service categories", "Channels", "Settlement types"]
+)
+
+with tab_cat:
+    by_cat = group_summary(filtered, "service_category")
+    fig_cat = px.bar(
+        by_cat.sort_values("unresolved_backlog"),
+        x="unresolved_backlog",
+        y="service_category",
+        orientation="h",
+        color="unresolved_backlog",
+        color_continuous_scale=PRESSURE_SCALE,
+        labels={"unresolved_backlog": "Unresolved backlog", "service_category": ""},
     )
-    st.plotly_chart(fig, width="stretch")
+    fig_cat.update_layout(height=420, coloraxis_showscale=False,
+                          margin={"l": 0, "r": 10, "t": 10, "b": 0})
+    st.plotly_chart(fig_cat, width="stretch")
 
-with charts_col:
-    tab_cat, tab_ch, tab_set = st.tabs(
-        ["Service categories", "Channels", "Settlement types"]
+with tab_ch:
+    by_ch = group_summary(filtered, "primary_channel").sort_values("on_time_pct")
+    fig_ch = px.bar(
+        by_ch,
+        x="on_time_pct",
+        y="primary_channel",
+        orientation="h",
+        color="satisfaction",
+        color_continuous_scale=QUALITY_SCALE,
+        labels={
+            "on_time_pct": "Resolved on time (%)",
+            "primary_channel": "",
+            "satisfaction": "Satisfaction",
+        },
     )
+    fig_ch.update_layout(height=420, margin={"l": 0, "r": 10, "t": 10, "b": 0})
+    st.plotly_chart(fig_ch, width="stretch")
 
-    with tab_cat:
-        by_cat = group_summary(filtered, "service_category")
-        fig_cat = px.bar(
-            by_cat.sort_values("unresolved_backlog"),
-            x="unresolved_backlog",
-            y="service_category",
-            orientation="h",
-            color="unresolved_backlog",
-            color_continuous_scale=PRESSURE_SCALE,
-            labels={"unresolved_backlog": "Unresolved backlog", "service_category": ""},
-        )
-        fig_cat.update_layout(height=480, coloraxis_showscale=False,
-                              margin={"l": 0, "r": 10, "t": 10, "b": 0})
-        st.plotly_chart(fig_cat, width="stretch")
-
-    with tab_ch:
-        by_ch = group_summary(filtered, "primary_channel").sort_values("on_time_pct")
-        fig_ch = px.bar(
-            by_ch,
-            x="on_time_pct",
-            y="primary_channel",
-            orientation="h",
-            color="satisfaction",
-            color_continuous_scale=QUALITY_SCALE,
-            labels={
-                "on_time_pct": "Resolved on time (%)",
-                "primary_channel": "",
-                "satisfaction": "Satisfaction",
-            },
-        )
-        fig_ch.update_layout(height=480, margin={"l": 0, "r": 10, "t": 10, "b": 0})
-        st.plotly_chart(fig_ch, width="stretch")
-
-    with tab_set:
-        by_set = group_summary(filtered, "settlement_type")
-        fig_set = px.bar(
-            by_set.sort_values("unresolved_backlog"),
-            x="unresolved_backlog",
-            y="settlement_type",
-            orientation="h",
-            color="satisfaction",
-            color_continuous_scale=QUALITY_SCALE,
-            labels={
-                "unresolved_backlog": "Unresolved backlog",
-                "settlement_type": "",
-                "satisfaction": "Satisfaction",
-            },
-        )
-        fig_set.update_layout(height=480, margin={"l": 0, "r": 10, "t": 10, "b": 0})
-        st.plotly_chart(fig_set, width="stretch")
+with tab_set:
+    by_set = group_summary(filtered, "settlement_type")
+    fig_set = px.bar(
+        by_set.sort_values("unresolved_backlog"),
+        x="unresolved_backlog",
+        y="settlement_type",
+        orientation="h",
+        color="satisfaction",
+        color_continuous_scale=QUALITY_SCALE,
+        labels={
+            "unresolved_backlog": "Unresolved backlog",
+            "settlement_type": "",
+            "satisfaction": "Satisfaction",
+        },
+    )
+    fig_set.update_layout(height=420, margin={"l": 0, "r": 10, "t": 10, "b": 0})
+    st.plotly_chart(fig_set, width="stretch")
 
 st.subheader("Top pressure districts")
 urgent_count = int(districts_view["has_urgent"].sum())
@@ -552,42 +550,41 @@ if drill_district != "— Select a district —":
     d4.metric("On time", f"{drill_kpi['on_time_pct']:.1f}%")
     d5.metric("Pressure score", f"{drill_meta['pressure_score']:.0f}")
 
-    dc1, dc2 = st.columns(2)
-    with dc1:
-        by_cat = group_summary(drill_df, "service_category")
-        fig_dcat = px.bar(
-            by_cat.sort_values("unresolved_backlog"),
-            x="unresolved_backlog",
-            y="service_category",
-            orientation="h",
-            color="unresolved_backlog",
-            color_continuous_scale=PRESSURE_SCALE,
-            labels={"unresolved_backlog": "Backlog", "service_category": ""},
-            title="Backlog by service category",
-        )
-        fig_dcat.update_layout(
-            height=320, coloraxis_showscale=False,
-            margin={"l": 0, "r": 10, "t": 40, "b": 0},
-        )
-        st.plotly_chart(fig_dcat, width="stretch")
-    with dc2:
-        by_ch = group_summary(drill_df, "primary_channel").sort_values("on_time_pct")
-        fig_dch = px.bar(
-            by_ch,
-            x="on_time_pct",
-            y="primary_channel",
-            orientation="h",
-            color="satisfaction",
-            color_continuous_scale=QUALITY_SCALE,
-            labels={
-                "on_time_pct": "On time %",
-                "primary_channel": "",
-                "satisfaction": "Satisfaction",
-            },
-            title="Channel on-time performance",
-        )
-        fig_dch.update_layout(height=320, margin={"l": 0, "r": 10, "t": 40, "b": 0})
-        st.plotly_chart(fig_dch, width="stretch")
+    by_cat = group_summary(drill_df, "service_category")
+    fig_dcat = px.bar(
+        by_cat.sort_values("unresolved_backlog"),
+        x="unresolved_backlog",
+        y="service_category",
+        orientation="h",
+        color="unresolved_backlog",
+        color_continuous_scale=PRESSURE_SCALE,
+        labels={"unresolved_backlog": "Backlog", "service_category": ""},
+        title="Backlog by service category",
+    )
+    fig_dcat.update_layout(
+        height=360, coloraxis_showscale=False,
+        margin={"l": 0, "r": 10, "t": 40, "b": 0},
+    )
+    st.plotly_chart(fig_dcat, width="stretch")
+    st.markdown('<div class="zsp-chart-gap"></div>', unsafe_allow_html=True)
+
+    by_ch = group_summary(drill_df, "primary_channel").sort_values("on_time_pct")
+    fig_dch = px.bar(
+        by_ch,
+        x="on_time_pct",
+        y="primary_channel",
+        orientation="h",
+        color="satisfaction",
+        color_continuous_scale=QUALITY_SCALE,
+        labels={
+            "on_time_pct": "On time %",
+            "primary_channel": "",
+            "satisfaction": "Satisfaction",
+        },
+        title="Channel on-time performance",
+    )
+    fig_dch.update_layout(height=360, margin={"l": 0, "r": 10, "t": 40, "b": 0})
+    st.plotly_chart(fig_dch, width="stretch")
 
 # ============================================================ step 3
 st.header("3 · Key insights", anchor="step-3")
