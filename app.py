@@ -706,8 +706,3 @@ d3.download_button(
     mime="application/pdf",
     width="stretch",
 )
-
-st.caption(
-    "All figures computed live from data/01_public_service_requests.csv - "
-    "nothing is hardcoded. Metric definitions: BRIEF.md §6."
-)
