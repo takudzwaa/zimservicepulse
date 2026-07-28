@@ -40,6 +40,9 @@ yarn-error.log*
 # local PGlite database
 /data/pglite/
 
+# generated at postinstall by scripts/sync-maplibre-worker.mjs
+/public/maplibre/
+
 # vercel
 .vercel
 
