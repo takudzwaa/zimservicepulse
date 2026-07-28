@@ -4,9 +4,30 @@ export type UserRole =
   | "district_manager"
   | "provincial_analyst"
   | "channel_lead"
+  | "external_user"
   | "admin";
 
+export type WorkspaceAudience =
+  | "council"
+  | "ministry"
+  | "business"
+  | "researcher"
+  | "citizen";
+
 export type ActionStatus = "open" | "in_progress" | "done" | "dismissed";
+
+export type CitizenReportStatus =
+  | "submitted"
+  | "acknowledged"
+  | "in_progress"
+  | "resolved"
+  | "closed";
+
+export type DataAccessRequestStatus =
+  | "submitted"
+  | "changes_requested"
+  | "approved"
+  | "rejected";
 
 export type InsightSeverity = "high" | "medium";
 
@@ -99,6 +120,8 @@ export interface Insight {
   action_title: string;
   action_body: string;
   kind: InsightKind;
+  /** Named algorithm that produced this insight (shown in UI). */
+  algorithm?: string;
 }
 
 export const PRIORITY_ORDER: PriorityFlag[] = ["Urgent", "Watch", "Normal"];

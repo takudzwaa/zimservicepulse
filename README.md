@@ -2,8 +2,8 @@
 
 **Citizen Service Hotspot & Channel Optimizer** — *See the pressure. Act with precision.*
 
-Next.js operations console for the POTRAZ AI4I 2026 Challenge (Design Track) by
-PulseForge Zimbabwe. Role-aware homes, command-center alerts, deeper analysis,
+Next.js operations console by PulseForge Zimbabwe. Role-aware homes,
+command-center alerts, deeper analysis,
 action workflow, and export packs — all computed live from the official CSV.
 
 The previous Streamlit prototype is preserved under [`legacy/streamlit/`](legacy/streamlit/).
@@ -19,9 +19,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Requires `data/01_public_service_requests.csv` (official AI4I dataset).
+Requires `data/01_public_service_requests.csv` (public service-request dataset).
 
-### Demo accounts (PIN `Zim2026!`)
+### Local demo accounts
 
 | Email | Role |
 |---|---|
@@ -44,12 +44,16 @@ Requires `data/01_public_service_requests.csv` (official AI4I dataset).
 ## Deploy on Vercel
 
 1. Import the GitHub repo in Vercel.
-2. Set env vars: `AUTH_SECRET` (random), `DEMO_PIN`, optional `DATABASE_URL` (Neon Postgres).
-3. Without `DATABASE_URL`, the app uses local PGlite (fine for demos; use Neon for production serverless).
+2. Follow [LIVE_DEPLOYMENT.md](LIVE_DEPLOYMENT.md) for Neon, Blob, Resend,
+   production identity, migration, and cutover configuration.
+3. PGlite and shared demo credentials are development-only and are disabled in
+   production unless explicitly opted in.
 4. Deploy. Framework preset: Next.js.
 
-For the full Neon setup, database-release workflow, health check, and rollback
-procedure, see [DEPLOYMENT.md](DEPLOYMENT.md).
+For the complete live-service architecture, account bootstrap, data activation,
+release checklist, incident response, and rollback procedure, see
+[LIVE_DEPLOYMENT.md](LIVE_DEPLOYMENT.md). `DEPLOYMENT.md` is retained as the
+short demo-era reference.
 
 ## Product modules
 
@@ -58,7 +62,40 @@ procedure, see [DEPLOYMENT.md](DEPLOYMENT.md).
 - **Explore** — filters (URL-synced), hotspot map (offline toggle), rankings, presets
 - **Analysis** — cohort compare, channel ROI, backlog aging proxy, next-month forecast
 - **Workflow** — assign / status / comments + CSV / Markdown / PDF export packs
-- **`/briefing`** — AI4I 4-step pitch story (Overview → Explore → Insights → Actions)
+- **`/briefing`** — 4-step briefing story (Overview → Explore → Insights → Actions)
+
+## Municipal service coverage
+
+The operations console covers service request management, road and infrastructure
+inspection follow-up, waste collection tracking, water outage reporting,
+performance dashboards, GIS issue mapping, and transparent next-month service
+demand forecasting. Roads, waste, and water have dedicated, role-scoped
+operations views under `/services`. Asset management and ward/councillor
+analytics publish integration-readiness pages and required source schemas; they
+remain unpopulated until authoritative council records are connected.
+
+## Who it serves
+
+- **Councils:** request, response-time, hotspot and departmental-performance dashboards.
+- **Ministries:** national and provincial comparison of service delivery across councils.
+- **Businesses:** appropriately shared anonymized infrastructure and market insights.
+- **Researchers:** anonymized historical datasets under licence.
+- **Citizens:** free reporting tools with optional premium community features.
+
+External insight and research access requires appropriate anonymization, data governance and licensing.
+
+Authenticated stakeholder workspaces are available under `/stakeholders`:
+
+- Council users can triage citizen reports into the accountable workflow.
+- Ministry users receive province and service-category comparison views.
+- Business and Researcher users receive aggregate summaries and can submit
+  governed data-access requests.
+- Citizen users can submit categorized service reports, receive a reference,
+  and track status history.
+- Admin users review data-access requests under `/governance`.
+
+Raw exports are restricted to internal operational roles and are always scoped
+to the signed-in user's assigned districts or provinces.
 
 ## Design decisions
 
@@ -68,7 +105,8 @@ procedure, see [DEPLOYMENT.md](DEPLOYMENT.md).
   satisfaction, min-max normalised across districts in view.
 - **No invented numbers.** Insights and actions come from a pure rules engine
   over the filtered dataframe.
-- **Auth.** Auth.js credentials with role + PIN (bcrypt).
+- **Auth.** Auth.js credentials with individual bcrypt-hashed passwords,
+  verified email, invitations, password recovery, roles, and authority membership.
 
 ## Project structure
 

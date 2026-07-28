@@ -1,4 +1,4 @@
-"""Cached, validated loading of the official AI4I dataset.
+"""Cached, validated loading of the public service-request dataset.
 
 All numbers shown in the app trace back to this single CSV. If the file is
 missing or malformed we fail loudly rather than substitute fabricated data.

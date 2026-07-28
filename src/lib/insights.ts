@@ -10,6 +10,17 @@ import type {
   ServiceRequestRow,
 } from "@/lib/types";
 
+/** Named InsightForge rules — shown on cards so AI is visible and nameable. */
+export const INSIGHT_RULE_NAMES: Record<string, string> = {
+  backlog: "InsightForge · BacklogLeader",
+  channel: "InsightForge · ChannelGap",
+  urgent: "InsightForge · UrgentConcentration",
+  satisfaction: "InsightForge · SatisfactionFloor",
+  slow: "InsightForge · SlowResolution",
+  general: "InsightForge · General",
+  trend: "TrendCast OLS · Momentum",
+};
+
 const CHANNEL_GAP_MIN_PTS = 5.0;
 const SATISFACTION_FLOOR = 3.0;
 const MIN_VOLUME_SHARE = 0.02;
@@ -50,7 +61,12 @@ export function generateInsights(rows: ServiceRequestRow[]): Insight[] {
     slowResolution,
   ]) {
     const result = rule(rows);
-    if (result) insights.push(result);
+    if (result) {
+      insights.push({
+        ...result,
+        algorithm: INSIGHT_RULE_NAMES[result.kind] ?? "InsightForge Rules Engine",
+      });
+    }
   }
   return prioritise(insights, null);
 }

@@ -54,6 +54,15 @@ export function loadRequests(): {
   if (cached) return cached;
 
   const csv = readFileSync(DATA_PATH, "utf8");
+  const result = parseRequestsCsv(csv);
+  cached = result;
+  return result;
+}
+
+export function parseRequestsCsv(csv: string): {
+  rows: ServiceRequestRow[];
+  excluded: number;
+} {
   const parsed = Papa.parse<Record<string, string>>(csv, {
     header: true,
     skipEmptyLines: true,
@@ -127,6 +136,5 @@ export function loadRequests(): {
     });
   }
 
-  cached = { rows, excluded };
-  return cached;
+  return { rows, excluded };
 }

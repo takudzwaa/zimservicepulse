@@ -48,7 +48,6 @@ export function ExploreClient({
   settlements,
   trends,
   insights,
-  geojson,
   presets,
 }: {
   rows: ServiceRequestRow[];
@@ -60,7 +59,6 @@ export function ExploreClient({
   settlements: GroupSummary[];
   trends: MonthTrend[];
   insights: Insight[];
-  geojson: GeoJSON.FeatureCollection | null;
   presets: { id: string; name: string; filters: FilterState }[];
 }) {
   const router = useRouter();
@@ -184,7 +182,6 @@ export function ExploreClient({
           <div className="grid gap-4 xl:grid-cols-2">
             <HotspotMap
               districts={districts}
-              geojson={geojson}
               selectedDistrict={selectedDistrict}
               onSelectDistrict={selectDistrict}
             />

@@ -1,6 +1,6 @@
 # ZimServicePulse – Prototype Build Brief (Refined)
 
-**AI4I 2026 Design Track | Shortlisted Project**
+**Service Delivery Innovation Project**
 **Team:** PulseForge Zimbabwe
 **Lead Innovator:** Taku Gondo
 **Date:** 23 July 2026 (refined)
@@ -187,7 +187,7 @@ render — no filler text.
 - WCAG-friendly contrast; hotspot scale readable for colour-blind users
   (use a sequential yellow→orange→red scale, not red/green)
 - Clear typography, generous white space
-- Note at top: *"Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe"*
+- Note at top: *"Service delivery prototype | PulseForge Zimbabwe"*
 
 ### Map
 - Bubble map on district `latitude`/`longitude`: bubble size = request

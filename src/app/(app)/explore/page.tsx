@@ -3,15 +3,16 @@ import { auth } from "@/lib/auth";
 import { eq } from "drizzle-orm";
 import {
   computeDashboard,
-  getAllRows,
-  loadProvinceGeojson,
+  getRowsForUser,
   parseFilters,
 } from "@/lib/data/dashboard";
 import { ExploreClient } from "@/components/dashboard/explore-client";
+import { ConsoleSkeleton } from "@/components/dashboard/console-skeleton";
 import { ensureSchema, getDb } from "@/lib/db";
 import { filterPresets } from "@/lib/db/schema";
 import type { FilterState } from "@/lib/types";
 import { EMPTY_FILTERS } from "@/lib/types";
+import { scopeRowsForUser } from "@/lib/access";
 
 export default async function ExplorePage({
   searchParams,
@@ -21,9 +22,9 @@ export default async function ExplorePage({
   const params = await searchParams;
   const session = await auth();
   const filters = parseFilters(params);
-  const { rows } = getAllRows();
+  const { rows: allRows } = await getRowsForUser(session!.user);
+  const rows = scopeRowsForUser(allRows, session!.user);
   const dash = computeDashboard(rows, filters);
-  const geojson = loadProvinceGeojson();
 
   await ensureSchema();
   const db = await getDb();
@@ -39,7 +40,7 @@ export default async function ExplorePage({
   }));
 
   return (
-    <Suspense fallback={<div>Loading explorer…</div>}>
+    <Suspense fallback={<ConsoleSkeleton />}>
       <ExploreClient
         rows={rows}
         initialFilters={filters}
@@ -50,7 +51,6 @@ export default async function ExplorePage({
         settlements={dash.settlements}
         trends={dash.trends}
         insights={dash.insights}
-        geojson={geojson}
         presets={presets}
       />
     </Suspense>

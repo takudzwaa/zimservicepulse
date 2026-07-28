@@ -1,4 +1,8 @@
-import { applyFilters, loadRequests } from "@/lib/data/loadRequests";
+import { applyFilters, loadRequests, parseRequestsCsv } from "@/lib/data/loadRequests";
+import { and, desc, eq } from "drizzle-orm";
+import type { AccessUser } from "@/lib/access";
+import { ensureSchema, getDb } from "@/lib/db";
+import { authorityDatasets } from "@/lib/db/schema";
 import {
   districtSummary,
   filterContextLabel,
@@ -16,10 +20,49 @@ import {
 } from "@/lib/analysis";
 import type { FilterState, InsightKind, ServiceRequestRow } from "@/lib/types";
 import { EMPTY_FILTERS } from "@/lib/types";
-import { readFileSync } from "fs";
-import path from "path";
 
 export function getAllRows() {
+  return loadRequests();
+}
+
+/**
+ * Authority dataset rows are immutable per `id` (a new upload always gets a
+ * new id/version), so parsed CSVs can be cached for the life of this
+ * process instead of re-parsing on every request.
+ */
+const parsedAuthorityDatasetCache = new Map<
+  string,
+  ReturnType<typeof parseRequestsCsv>
+>();
+
+export async function getRowsForUser(user: AccessUser) {
+  if (user.authorityId) {
+    await ensureSchema();
+    const db = await getDb();
+    const [active] = await db
+      .select()
+      .from(authorityDatasets)
+      .where(
+        and(
+          eq(authorityDatasets.authorityId, user.authorityId),
+          eq(authorityDatasets.datasetType, "service_requests"),
+          eq(authorityDatasets.status, "active"),
+        ),
+      )
+      .orderBy(desc(authorityDatasets.version))
+      .limit(1);
+    if (active) {
+      const cached = parsedAuthorityDatasetCache.get(active.id);
+      if (cached) return cached;
+      const result = parseRequestsCsv(active.csvText);
+      parsedAuthorityDatasetCache.set(active.id, result);
+      return result;
+    }
+    // No active dataset for this authority: never fall back to the
+    // national platform CSV for an authority-scoped user, in any
+    // environment — that would leak national data into a scoped view.
+    return { rows: [], excluded: 0 };
+  }
   return loadRequests();
 }
 
@@ -81,13 +124,4 @@ export function compareCohorts(
   const a = rows.filter((r) => r[aKey] === aValue);
   const b = rows.filter((r) => r[aKey] === bValue);
   return cohortCompare(a, b, aValue, bValue);
-}
-
-export function loadProvinceGeojson(): GeoJSON.FeatureCollection | null {
-  try {
-    const p = path.join(process.cwd(), "public", "geo", "zw_provinces.geojson");
-    return JSON.parse(readFileSync(p, "utf8")) as GeoJSON.FeatureCollection;
-  } catch {
-    return null;
-  }
 }

@@ -17,7 +17,7 @@ ordered so that every phase ends with something demoable.
 The repo currently contains **no dataset**. Nothing downstream can be
 verified without it.
 
-- [ ] Obtain `01_public_service_requests.csv` from the AI4I organisers'
+- [ ] Obtain `01_public_service_requests.csv` from the relevant data provider
       pack and place it at `data/01_public_service_requests.csv`
 - [ ] First-look validation in a throwaway script/notebook:
       - actual column names vs the data contract in `BRIEF.md` §5

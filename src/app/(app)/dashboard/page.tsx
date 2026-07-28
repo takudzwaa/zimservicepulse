@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import {
-  computeDashboard,
-  getAllRows,
-  loadProvinceGeojson,
-} from "@/lib/data/dashboard";
+import { computeDashboard, getRowsForUser } from "@/lib/data/dashboard";
 import { KpiRibbon } from "@/components/dashboard/kpi-ribbon";
 import { InsightCards } from "@/components/dashboard/insight-cards";
+import { AudienceValue } from "@/components/dashboard/audience-value";
+import { ServiceCoverage } from "@/components/dashboard/service-coverage";
 import { HotspotMap } from "@/components/map/hotspot-map";
 import { RankingCharts } from "@/components/charts/ranking-charts";
 import { Badge } from "@/components/ui/badge";
@@ -33,8 +32,10 @@ import { EMPTY_FILTERS } from "@/lib/types";
 export default async function HomePage() {
   const session = await auth();
   const user = session!.user;
-  const { rows } = getAllRows();
-  const geojson = loadProvinceGeojson();
+  if (user.role === "external_user" && user.audience) {
+    redirect(`/stakeholders/${user.audience}`);
+  }
+  const { rows } = await getRowsForUser(user);
 
   let filters: FilterState = { ...EMPTY_FILTERS };
   let title = "National operations overview";
@@ -78,14 +79,8 @@ export default async function HomePage() {
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link
-            href="/command-center"
-            className={cn(buttonVariants({ variant: "outline" }))}
-          >
-            Open command center
-          </Link>
           <Link href="/briefing" className={cn(buttonVariants())}>
-            AI4I briefing flow
+            Open briefing
           </Link>
         </div>
       </div>
@@ -142,7 +137,7 @@ export default async function HomePage() {
       ) : null}
 
       <div className="grid gap-4 xl:grid-cols-2">
-        <HotspotMap districts={dash.districts} geojson={geojson} />
+        <HotspotMap districts={dash.districts} />
         <RankingCharts
           categories={dash.categories}
           channels={dash.channels}
@@ -150,6 +145,10 @@ export default async function HomePage() {
           trends={dash.trends}
         />
       </div>
+
+      <ServiceCoverage />
+
+      <AudienceValue />
 
       {user.role === "provincial_analyst" ? (
         <Card>

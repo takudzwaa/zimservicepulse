@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Insight } from "@/lib/types";
+import { severityBadgeVariant, severityBorderClass } from "@/lib/severity";
 
 function renderBody(body: string) {
   const parts = body.split(/(\*\*[^*]+\*\*)/g);
@@ -34,17 +35,20 @@ export function InsightCards({ insights }: { insights: Insight[] }) {
       {insights.map((ins) => (
         <Card
           key={ins.id}
-          className={`border-l-4 shadow-sm ${
-            ins.severity === "high" ? "border-l-alert" : "border-l-gold"
-          }`}
+          className={`border-l-4 shadow-sm ${severityBorderClass(ins.severity)}`}
         >
           <CardHeader className="pb-2">
             <div className="flex items-start justify-between gap-2">
               <CardTitle className="text-sm leading-snug">{ins.title}</CardTitle>
-              <Badge variant={ins.severity === "high" ? "destructive" : "secondary"}>
+              <Badge variant={severityBadgeVariant(ins.severity)}>
                 {ins.severity}
               </Badge>
             </div>
+            {ins.algorithm ? (
+              <Badge variant="outline" className="w-fit border-brand/20 text-[10px] text-brand">
+                {ins.algorithm}
+              </Badge>
+            ) : null}
           </CardHeader>
           <CardContent className="space-y-2 text-sm text-muted-foreground">
             <p>{renderBody(ins.body)}</p>

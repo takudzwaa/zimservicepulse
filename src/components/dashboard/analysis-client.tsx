@@ -199,8 +199,13 @@ export function AnalysisClient({
             </div>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
-            {[compare.a, compare.b].map((c) => (
-              <div key={c.label} className="rounded-lg border p-3">
+            {(
+              [
+                { side: "a", data: compare.a },
+                { side: "b", data: compare.b },
+              ] as const
+            ).map(({ side, data: c }) => (
+              <div key={side} className="rounded-lg border p-3">
                 <div className="font-semibold">{c.label}</div>
                 <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
                   <div>Requests: {c.kpis.total_requests.toLocaleString()}</div>

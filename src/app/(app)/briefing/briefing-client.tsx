@@ -37,13 +37,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function BriefingClient({
-  rows,
-  geojson,
-}: {
-  rows: ServiceRequestRow[];
-  geojson: GeoJSON.FeatureCollection | null;
-}) {
+export function BriefingClient({ rows }: { rows: ServiceRequestRow[] }) {
   const [filters, setFilters] = useState<FilterState>({ ...EMPTY_FILTERS });
   const [focusLabel, setFocusLabel] = useState(
     "Balanced (default severity)",
@@ -84,9 +78,9 @@ export function BriefingClient({
   return (
     <div className="space-y-6">
       <div>
-        <Badge className="mb-2">AI4I Design Track · 4-step story</Badge>
+        <Badge className="mb-2">4-step service story</Badge>
         <h1 className="font-brand text-3xl font-semibold text-brand">
-          Briefing demo
+          Operational briefing
         </h1>
         <p className="text-sm text-muted-foreground">
           Overview → Explore → Insights → Actions. Designed for a sub-3-minute
@@ -119,7 +113,7 @@ export function BriefingClient({
             where pressure concentrates and what to do first.
           </div>
           <KpiRibbon kpis={dash.kpi} />
-          <HotspotMap districts={dash.districts} geojson={geojson} />
+          <HotspotMap districts={dash.districts} />
         </section>
       ) : null}
 

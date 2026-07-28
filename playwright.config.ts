@@ -12,7 +12,7 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: "npm run dev",
+    command: "npm run dev -- --webpack",
     url: "http://127.0.0.1:3000/login",
     reuseExistingServer: !process.env.CI,
     env: {

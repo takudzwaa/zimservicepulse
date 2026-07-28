@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { severityBadgeVariant, severityBorderClass } from "@/lib/severity";
 
 export function CommandCenterClient({
   alerts,
@@ -27,6 +28,7 @@ export function CommandCenterClient({
   const router = useRouter();
   const [severity, setSeverity] = useState<"all" | "high" | "medium">("all");
   const [showUnreadOnly, setShowUnreadOnly] = useState(false);
+  const [busy, setBusy] = useState<Set<string>>(new Set());
   const read = new Set(readIds);
 
   const filtered = alerts.filter((a) => {
@@ -35,32 +37,50 @@ export function CommandCenterClient({
     return true;
   });
 
-  async function markRead(alertId: string) {
-    const res = await fetch("/api/alerts/read", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ alertId }),
-    });
-    if (!res.ok) {
-      toast.error("Could not mark read");
-      return;
+  async function withBusy(key: string, run: () => Promise<void>) {
+    if (busy.has(key)) return;
+    setBusy((prev) => new Set(prev).add(key));
+    try {
+      await run();
+    } finally {
+      setBusy((prev) => {
+        const next = new Set(prev);
+        next.delete(key);
+        return next;
+      });
     }
-    toast.success("Marked as read");
-    router.refresh();
   }
 
-  async function materialize(insight: Insight) {
-    const res = await fetch("/api/actions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ insight }),
+  function markRead(alertId: string) {
+    return withBusy(`read:${alertId}`, async () => {
+      const res = await fetch("/api/alerts/read", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ alertId }),
+      });
+      if (!res.ok) {
+        toast.error("Could not mark read");
+        return;
+      }
+      toast.success("Marked as read");
+      router.refresh();
     });
-    if (!res.ok) {
-      toast.error("Could not create action");
-      return;
-    }
-    toast.success("Action created in workflow");
-    router.refresh();
+  }
+
+  function materialize(insight: Insight) {
+    return withBusy(`materialize:${insight.id}`, async () => {
+      const res = await fetch("/api/actions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ insight }),
+      });
+      if (!res.ok) {
+        toast.error("Could not create action");
+        return;
+      }
+      toast.success("Action created in workflow");
+      router.refresh();
+    });
   }
 
   return (
@@ -119,17 +139,15 @@ export function CommandCenterClient({
         {filtered.map((a) => (
           <Card
             key={a.id}
-            className={`border-l-4 ${
-              a.severity === "high" ? "border-l-alert" : "border-l-gold"
-            } ${read.has(a.id) ? "opacity-70" : ""}`}
+            className={`border-l-4 ${severityBorderClass(a.severity)} ${
+              read.has(a.id) ? "opacity-70" : ""
+            }`}
           >
             <CardHeader className="pb-2">
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <CardTitle className="text-sm">{a.title}</CardTitle>
                 <div className="flex gap-2">
-                  <Badge
-                    variant={a.severity === "high" ? "destructive" : "secondary"}
-                  >
+                  <Badge variant={severityBadgeVariant(a.severity)}>
                     {a.severity}
                   </Badge>
                   <Badge variant="outline">{a.kind}</Badge>
@@ -145,12 +163,21 @@ export function CommandCenterClient({
               <p>{a.body.replace(/\*\*/g, "")}</p>
               <div className="flex flex-wrap gap-2">
                 {!read.has(a.id) ? (
-                  <Button size="sm" variant="outline" onClick={() => markRead(a.id)}>
-                    Mark read
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    disabled={busy.has(`read:${a.id}`)}
+                    onClick={() => markRead(a.id)}
+                  >
+                    {busy.has(`read:${a.id}`) ? "Marking…" : "Mark read"}
                   </Button>
                 ) : null}
-                <Button size="sm" onClick={() => materialize(a)}>
-                  Send to workflow
+                <Button
+                  size="sm"
+                  disabled={busy.has(`materialize:${a.id}`)}
+                  onClick={() => materialize(a)}
+                >
+                  {busy.has(`materialize:${a.id}`) ? "Sending…" : "Send to workflow"}
                 </Button>
               </div>
             </CardContent>

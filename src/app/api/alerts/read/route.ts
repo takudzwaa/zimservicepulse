@@ -8,6 +8,9 @@ export async function POST(req: Request) {
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  if (session.user.role === "external_user") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
   const { alertId } = await req.json();
   if (!alertId) {
     return NextResponse.json({ error: "alertId required" }, { status: 400 });

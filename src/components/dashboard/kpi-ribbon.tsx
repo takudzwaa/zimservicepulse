@@ -7,10 +7,6 @@ import type { Kpis } from "@/lib/types";
 function useCountUp(target: number, duration = 700) {
   const [value, setValue] = useState(0);
   useEffect(() => {
-    if (!Number.isFinite(target)) {
-      setValue(0);
-      return;
-    }
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
@@ -55,7 +51,7 @@ function KpiCard({
       <CardContent>
         <div className="font-brand text-2xl font-semibold tabular-nums md:text-3xl">
           {Number.isFinite(value)
-            ? animated.toLocaleString(undefined, {
+            ? animated.toLocaleString("en-US", {
                 maximumFractionDigits: decimals,
                 minimumFractionDigits: decimals,
               })

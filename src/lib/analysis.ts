@@ -55,10 +55,13 @@ export function channelRoi(rows: ServiceRequestRow[]): ChannelRoi[] {
     const total = g.requests_received || 1;
     const resolved = subset.reduce((s, r) => s + r.requests_resolved, 0);
     const resolution_rate = (resolved / total) * 100;
+    // A zero-volume channel yields NaN on_time_pct/satisfaction (weightedMean's
+    // 0/0 guard); scoring it 0 instead of NaN keeps it from poisoning the
+    // Math.max(...) normalisation below for every other channel.
     const raw =
-      (resolution_rate / 100) *
-      (g.on_time_pct / 100) *
-      (g.satisfaction / 5);
+      g.requests_received === 0
+        ? 0
+        : (resolution_rate / 100) * (g.on_time_pct / 100) * (g.satisfaction / 5);
     return {
       channel: g.key,
       requests_received: g.requests_received,

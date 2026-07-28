@@ -1,6 +1,6 @@
 # Legacy Streamlit prototype
 
-This folder holds the original AI4I Streamlit dashboard (`v1-bootcamp` era).
+This folder holds the original Streamlit dashboard (`v1-bootcamp` era).
 
 The production app is the Next.js console at the repository root.
 

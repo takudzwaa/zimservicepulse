@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import type { ActionStatus } from "@/lib/types";
+import { severityBadgeVariant } from "@/lib/severity";
 
 type ActionRow = {
   id: string;
@@ -43,50 +44,76 @@ export function WorkflowClient({
 }) {
   const router = useRouter();
   const [commentDrafts, setCommentDrafts] = useState<Record<string, string>>({});
+  const [busy, setBusy] = useState<Set<string>>(new Set());
+  const [syncing, setSyncing] = useState(false);
 
-  async function updateAction(
+  async function withBusy(key: string, run: () => Promise<void>) {
+    if (busy.has(key)) return;
+    setBusy((prev) => new Set(prev).add(key));
+    try {
+      await run();
+    } finally {
+      setBusy((prev) => {
+        const next = new Set(prev);
+        next.delete(key);
+        return next;
+      });
+    }
+  }
+
+  function updateAction(
     id: string,
     patch: { status?: ActionStatus; assigneeId?: string | null },
   ) {
-    const res = await fetch("/api/actions", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, ...patch }),
+    return withBusy(id, async () => {
+      const res = await fetch("/api/actions", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, ...patch }),
+      });
+      if (!res.ok) {
+        toast.error("Update failed");
+        return;
+      }
+      toast.success("Updated");
+      router.refresh();
     });
-    if (!res.ok) {
-      toast.error("Update failed");
-      return;
-    }
-    toast.success("Updated");
-    router.refresh();
   }
 
-  async function addComment(actionId: string) {
+  function addComment(actionId: string) {
     const body = commentDrafts[actionId]?.trim();
     if (!body) return;
-    const res = await fetch("/api/actions/comments", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ actionId, body }),
+    return withBusy(`comment:${actionId}`, async () => {
+      const res = await fetch("/api/actions/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ actionId, body }),
+      });
+      if (!res.ok) {
+        toast.error("Comment failed");
+        return;
+      }
+      setCommentDrafts((d) => ({ ...d, [actionId]: "" }));
+      toast.success("Comment added");
+      router.refresh();
     });
-    if (!res.ok) {
-      toast.error("Comment failed");
-      return;
-    }
-    setCommentDrafts((d) => ({ ...d, [actionId]: "" }));
-    toast.success("Comment added");
-    router.refresh();
   }
 
   async function syncFromInsights() {
-    const res = await fetch("/api/actions/sync", { method: "POST" });
-    if (!res.ok) {
-      toast.error("Sync failed");
-      return;
+    if (syncing) return;
+    setSyncing(true);
+    try {
+      const res = await fetch("/api/actions/sync", { method: "POST" });
+      if (!res.ok) {
+        toast.error("Sync failed");
+        return;
+      }
+      const data = await res.json();
+      toast.success(`Synced ${data.created} new action(s)`);
+      router.refresh();
+    } finally {
+      setSyncing(false);
     }
-    const data = await res.json();
-    toast.success(`Synced ${data.created} new action(s)`);
-    router.refresh();
   }
 
   return (
@@ -102,8 +129,8 @@ export function WorkflowClient({
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={syncFromInsights}>
-            Sync from insights
+          <Button variant="outline" disabled={syncing} onClick={syncFromInsights}>
+            {syncing ? "Syncing…" : "Sync from insights"}
           </Button>
           <Link
             href="/api/export/csv"
@@ -136,9 +163,7 @@ export function WorkflowClient({
                   <CardDescription>{a.body}</CardDescription>
                 </div>
                 <div className="flex gap-2">
-                  <Badge
-                    variant={a.severity === "high" ? "destructive" : "secondary"}
-                  >
+                  <Badge variant={severityBadgeVariant(a.severity)}>
                     {a.severity}
                   </Badge>
                   <Badge variant="outline">{a.kind}</Badge>
@@ -149,6 +174,7 @@ export function WorkflowClient({
               <div className="flex flex-wrap gap-3">
                 <Select
                   value={a.status}
+                  disabled={busy.has(a.id)}
                   onValueChange={(v) =>
                     updateAction(a.id, { status: v as ActionStatus })
                   }
@@ -165,6 +191,7 @@ export function WorkflowClient({
                 </Select>
                 <Select
                   value={a.assigneeId ?? "unassigned"}
+                  disabled={busy.has(a.id)}
                   onValueChange={(v) =>
                     updateAction(a.id, {
                       assigneeId: v === "unassigned" ? null : v,
@@ -209,8 +236,12 @@ export function WorkflowClient({
                     setCommentDrafts((d) => ({ ...d, [a.id]: e.target.value }))
                   }
                 />
-                <Button size="sm" onClick={() => addComment(a.id)}>
-                  Comment
+                <Button
+                  size="sm"
+                  disabled={busy.has(`comment:${a.id}`)}
+                  onClick={() => addComment(a.id)}
+                >
+                  {busy.has(`comment:${a.id}`) ? "Posting…" : "Comment"}
                 </Button>
               </div>
             </CardContent>

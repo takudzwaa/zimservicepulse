@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1785183503553,
+      "tag": "0000_purple_gressill",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785184078454,
+      "tag": "0001_curvy_spectrum",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785213115590,
+      "tag": "0002_far_killer_shrike",
+      "breakpoints": true
+    }
+  ]
+}

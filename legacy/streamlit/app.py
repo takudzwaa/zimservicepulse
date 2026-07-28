@@ -1,6 +1,6 @@
 """ZimServicePulse – Citizen Service Hotspot & Channel Optimizer.
 
-Prototype for AI4I 2026 – Design Track | PulseForge Zimbabwe
+Service delivery prototype | PulseForge Zimbabwe
 Storytelling flow: 1 Overview -> 2 Exploration -> 3 Insights -> 4 Actions.
 """
 
@@ -164,7 +164,7 @@ st.markdown(
       <span class="zsp-brand">ZimServicePulse</span>
       <strong>Citizen Service Hotspot &amp; Channel Optimizer</strong>
       <em>See the pressure. Act with precision.</em>
-      <small>Prototype for AI4I 2026 - Design Track | PulseForge Zimbabwe</small>
+      <small>Service delivery prototype | PulseForge Zimbabwe</small>
     </div>
     """,
     unsafe_allow_html=True,
